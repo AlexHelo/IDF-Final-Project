@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Apollo
+
+    </title>
+    <link rel="icon" href="favicon.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway');
+
+        body {
+            background-image: url('Background.png');
+            background-size: 100% auto;
+            background-position: center;
+            background-repeat: repeat;
+            position: relative;
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Raleway', sans-serif;
+
+        }
+
+        :root {
+            --mainColor: #bac0c2;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 50px;
+            margin-left: 10%;
+            margin-right: 10%;
+            font-family: 'Raleway', sans-serif;
+            z-index: 50;
+
+
+        }
+
+
+        a {
+            color: #6b6f70;
+            text-decoration: none;
+
+
+        }
+
+
+        p {
+            background:
+                linear-gradient(to bottom, var(--mainColor) 0%,
+                var(--mainColor) 100%);
+            background-position: 0 100%;
+            background-repeat: repeat-x;
+            background-size: 1px 1px;
+            color: #6b6f70;
+            text-decoration: none;
+            transition: background-size .2s;
+            Size: 100% auto;
+
+        }
+
+        p:hover {
+            background-size: 4px 50px;
+        }
+
+        .left {
+            float: left;
+            margin-top: 5%;
+            margin-left: 5%;
+        }
+
+        .right {
+            float: right;
+            margin-top: 14%;
+            margin-right: 5%;
+        }
+
+        .content {
+            padding: 16px;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 80%;
+        }
+
+        .sticky+.content {
+            padding-top: 50px;
+        }
+
+        .item {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .item:first-child>span {
+            margin-right: auto;
+        }
+
+        .item:last-child>span {
+            margin-left: auto;
+        }
+
+        .logo {
+            align-content: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="header" id="myHeader">
+        <a class="item" href="members.html">
+            <p>Members</p>
+        </a>
+        <a class="item" href="benchmarking.html">
+            <p>Benchmarking</p>
+        </a>
+        <a class="item" href="index.html">
+            <img class="item" class="logo" border="0" src="ApolloLogo.png" width="15%" height="15%">
+        </a>
+        <a class="item" href="prototypes.html">
+            <p>Prototypes</p>
+        </a>
+        <a class="item" href="personas.html">
+            <p>Personas</p>
+        </a>
+    </div>
+
+
+
+    <div class="content">
+
+        <img class="left" src="KnockiProduct.png" width="40%" height="40%">
+
+        <img class="right" src="LowQualText3.png" width="40%" height="40%">
+    </div>
+    <script>
+        window.onscroll = function () {
+            myFunction()
+        };
+
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+
+
+
+    </div>
+
+
+</body>
+
+</html>

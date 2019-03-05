@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Apollo | Benchmarking
+    </title>
+    <link rel="icon" href="favicon.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway');
+
+        /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+
+        /*-------------------------------------------------------------------------------------------*/
+
+        body {
+            background-image: url('Background.png');
+            background-position: center;
+            background-repeat: repeat;
+            position: relative;
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Raleway', sans-serif;
+            z-index: -20000;
+            background-size: 100% auto;
+
+        }
+
+        :root {
+            --mainColor: #bac0c2;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 50px;
+            margin-left: 10%;
+            margin-right: 10%;
+            font-family: 'Raleway', sans-serif;
+            filter: drop-shadow(0px 0px 25px rgba(255, 255, 255, 1));
+            z-index: 50;
+
+
+        }
+
+
+        a {
+            color: #6b6f70;
+            text-decoration: none;
+
+
+        }
+
+
+        p {
+            background:
+                linear-gradient(to bottom, var(--mainColor) 0%,
+                var(--mainColor) 100%);
+            background-position: 0 100%;
+            background-repeat: repeat-x;
+            background-size: 1px 1px;
+            color: #6b6f70;
+            text-decoration: none;
+            transition: background-size .2s;
+
+        }
+
+        p:hover {
+            background-size: 4px 50px;
+        }
+
+        .left {
+            float: left;
+            margin-top: 5%;
+            margin-left: 5%;
+        }
+
+        .right {
+            float: right;
+            margin-top: 14%;
+            margin-right: 5%;
+        }
+
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 80%;
+            filter: drop-shadow(0px 0px 25px rgba(255, 255, 255, 1));
+        }
+
+
+
+        .item {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .item:first-child>span {
+            margin-right: auto;
+        }
+
+        .item:last-child>span {
+            margin-left: auto;
+        }
+
+        .logo {
+            align-content: center;
+            z-index: 20000;
+        }
+
+        .brands {
+            width: 10%;
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .3));
+        }
+
+        .pods {
+            width: 20%;
+
+        }
+
+        .flexbrands {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 2%;
+
+
+        }
+
+        .titles {
+
+            text-align: center;
+            color: black;
+            font-weight: 900;
+            font-size: 25px;
+            margin-top: 6%;
+            text-decoration: underline;
+
+        }
+
+        .minititles {
+            font-weight: 600;
+        }
+
+        .lefttxt {
+            width: 40%;
+            margin-left: 5%;
+            font-size: 20px;
+            text-align: justify;
+            line-height: 120%;
+            font-weight: 500;
+        }
+
+        .righttxt {
+            width: 40%;
+            margin-right: 5%;
+            float: right;
+            font-size: 20px;
+            text-align: justify;
+            line-height: 120%;
+            font-weight: 500;
+            position: relative;
+            margin-top: 0;
+        }
+
+        .megaflex {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .Website {
+            width: 40%;
+            height: 40%;
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .3));
+            padding: 5%;
+        }
+
+        .hvr-grow {
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+            -webkit-transition-property: transform;
+            transition-property: transform;
+        }
+
+        .hvr-grow:hover,
+        .hvr-grow:focus,
+        .hvr-grow:active {
+            -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+        }
+
+        .app {
+            width: 15%;
+            height: 15%;
+            margin: 5%;
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .3));
+        }
+
+        .rightimage {
+            width: 40%;
+            height: 40%;
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="header" id="myHeader">
+        <a class="item" href="members.html">
+            <p>Members</p>
+        </a>
+        <a class="item" href="benchmarking.html">
+            <p>Benchmarking</p>
+        </a>
+        <a class="item" href="index.html">
+            <img class="item logo" border="0" src="ApolloLogo.png" width="15%" height="15%">
+        </a>
+        <a class="item" href="prototypes.html">
+            <p>Prototypes</p>
+        </a>
+        <a class="item" href="personas.html">
+            <p>Personas</p>
+        </a>
+    </div>
+
+    <h1 class="titles">Potential Competitors</h1>
+
+    <div class="flexbrands">
+
+        <img class="brands " src="img/Samsung logo.png">
+        <img class="brands" src="img/Apple logo.png">
+        <img class="brands" src="img/Google logo.png">
+        <img class="brands" src="img/Amazon Logo.png">
+        <img class="brands" src="img/Home Depot Logo.png">
+        <img class="brands" src="img/Philips logo.png">
+    </div>
+
+    <h1 class="titles">Services & Products</h1>
+
+    <div class="flexbrands">
+
+        <img class="pods" src="img/Samsung Hub.jpg">
+        <img class="pods" src="img/HomePod.jpg">
+        <img class="pods" src="img/Amazon Echo.jpg">
+        <img class="pods" src="img/Philips Hue.jpg">
+
+    </div>
+    <h1 class="titles">Analizing Competitors</h1>
+    <div class="megaflex">
+
+        <div class="lefttxt">
+            <br>
+            <br>
+            <br>
+
+            <h1 class="minititles">SmartThings By Samsung</h1>
+            <br>
+            <br>
+
+            <h1>Smart Things App allows the user to connect his phone to all the Samsung products like refrigerators,
+                frames, washing machines, TV, watches, sensors, among others.
+                The advantage of this application is that is not neccesary to have a Samsung device to have them and
+                its
+                free.
+                <br>
+                <br>
+                This app allows devices like TVs, Air conditioner, Washer/Dryer, Robot Vacuum, Refrigerattor,
+                WiFi Hub, Motion sensors, cameras, doorbell, light bulb, lock, outlet, swit/dimmer and thermostat.
+                <br>
+                <br>
+                SmartThings conects all the Samsung devices to intereact with eachother, for example you can watch
+                TV from your Family Hub Refrigerator.
+            </h1>
+        </div>
+
+
+        <div class="righttxt">
+            <br>
+            <br>
+            <br>
+
+            <h1 class="minititles">HOME APP by Apple</h1>
+            <br>
+            <br>
+
+            <h1>This is a free app designed by Apple that allows the user to connect this mobile to different home
+                devices and personalize them. The application is only available for apple devices, which could
+                represent a problem for someone without an apple devices. It only requires WiFi.
+                <br>
+                <br>
+                It allows the user to connect to devices of differents brands like Philips, D-Link, Eve, Samsung,
+                Vizio, Sony, LG and Nanoleaf. The user can personalize by room, hour, actions, ubication, and
+                others.
+                <br>
+                <br>
+                The devices allowed are cameras, lights, spotlights, plugs, sensors, fans, airconditioners, TV,
+                thermometer, looks, house alarms and switches.
+            </h1>
+        </div>
+    </div>
+
+    <div class="megaflex">
+        <img class="Website hvr-grow" src="AppleWeb.png">
+        <img class="Website hvr-grow" src="SamsungWeb.png">
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="megaflex">
+
+        <img class="app hvr-grow" src="img/Prod1-samsung.png">
+        <img class="app hvr-grow" src="img/Prod2-samsung.png">
+
+        <img class="app hvr-grow" src="img/prod1-app.jpg">
+        <img class="app hvr-grow" src="img/prod2-app.jpg">
+
+    </div>
+
+
+    <h1 class="titles">How are we different?</h1>
+
+    <div class="megaflex">
+        <div class="lefttxt">
+
+
+
+            <h1>We allow to connect multiple devices from more than 150
+                different brands. It's the only one device that can control unify your IoT accesories. Once Koncki is
+                paired through the app it isn't neccesary to have your phone with you all the time. You are able to
+                personalize the beat patterns to add differnet functionalities.
+            </h1>
+        </div>
+
+
+        <img class="rightimage" src="img/Kweb_home_product.png">
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <script>
+        window.onscroll = function () {
+            myFunction()
+        };
+
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+
+
+
+    </div>
+
+
+</body>
+
+</html>
