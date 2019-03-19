@@ -1,0 +1,47 @@
+  body{
+    max-width: 767px;
+  }
+
+  .KnockiLogo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .LSbuttons{
+    width: 518px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .signUp{
+    font-family: sofia-pro, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+    color: white;
+    border-radius: 120px;
+    border-color: transparent;
+    width: 518px;
+    height: 150px;
+    background-color: #5BA8C6;
+  }
+
+  .logIn{
+    font-family: sofia-pro, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+    color: #5BA8C6;
+    border-radius: 120px;
+    border-color: #5BA8C6;
+    width: 518px;
+    height: 150px;
+    background-color: transparent;
+  }
