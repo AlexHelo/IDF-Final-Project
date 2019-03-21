@@ -45,3 +45,9 @@
     height: 150px;
     background-color: transparent;
   }
+
+  .firstScreen{
+    display: none;
+  }
+
+  /*First screen CSS OVER*/

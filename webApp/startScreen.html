@@ -1,21 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <link rel="stylesheet" href="https://use.typekit.net/lie7ipn.css">
-    <link href="../webApp/css/styles.css" rel="stylesheet">
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="../webApp/css/style.css">
+  <link href="../webApp/css/styles.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <section class="firstScreen">
     <div class="startScreen">
       <div class="KnockiLogo">
         <img src="../webApp/images/knockiLogoBlue.png" alt="Logo Knocki">
       </div>
       <div class="LSbuttons">
-          <button type="button" name="Sign Up" class="signUp"> Sign Up</button>
-          <button type="button" name="Log In" class="logIn"> Log In</button>
+        <button type="button" name="Sign Up" class="signUp"> Sign Up</button>
+        <button type="button" name="Log In" class="logIn"> Log In</button>
       </div>
     </div>
+  </section>
 
-  </body>
+  <!--Carousel Card container-->
+  <section class="GetStarted">
+    <div class="card">
+      <div class="products">
+        <div class="product active" product-id="1">
+          <div class="thumbnail"><img src="../webApp/images/illustration1.png"/ class="illo1"></div>
+          <h1 class="title">The Magnificent Stag</h1>
+          <p class="description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        </div>
+        <div class="product" product-id="2">
+          <div class="thumbnail"><img src="../webApp/images/illustration2.png"/></div>
+          <h1 class="title">The Courageous Bear</h1>
+          <p class="description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        </div>
+      </div>
+      <div class="footer"><a class="btn" id="prev" href="#" ripple="" ripple-color="#666666">Prev</a><a class="btn" id="next" href="#" ripple="" ripple-color="#666666">Next</a></div>
+    </div>
+  </section>
+  <!--Carousel card end-->
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  <script src="js/index.js"></script>
+</body>
+
 </html>
