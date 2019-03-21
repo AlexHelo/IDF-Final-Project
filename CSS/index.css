@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body {
+    background-image: url('img/Background.png');
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: repeat;
+    position: relative;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+:root {
+    --mainColor: #bac0c2;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: 'Raleway', sans-serif;
+    background: white;
+    z-index: 50;
+
+
+}
+
+
+a {
+    color: #6b6f70;
+    text-decoration: none;
+
+
+}
+
+
+p {
+    background:
+        linear-gradient(to bottom, var(--mainColor) 0%,
+        var(--mainColor) 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 1px 1px;
+    color: #6b6f70;
+    text-decoration: none;
+    transition: background-size .2s;
+    Size: 100% auto;
+
+}
+
+p:hover {
+    background-size: 4px 50px;
+}
+
+.left {
+    float: left;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.right {
+    float: right;
+    margin-top: 14%;
+    margin-right: 5%;
+}
+
+.content {
+    padding: 16px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 80%;
+    background: white;
+}
+
+.sticky+.content {
+    padding-top: 50px;
+}
+
+.item {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.item:first-child>span {
+    margin-right: auto;
+}
+
+.item:last-child>span {
+    margin-left: auto;
+}
+
+.logo {
+    align-content: center;
+}
