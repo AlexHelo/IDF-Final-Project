@@ -1,6 +1,7 @@
 
+  @import url("https://use.typekit.net/lie7ipn.css");
+
 body {
-  color: rgba(0, 0, 0, 0.6);
   font-family: sofia-pro, sans-serif;
   font-size: 14px;
   line-height: 1.6em;
@@ -12,30 +13,35 @@ body {
 
 .btn {
   border-radius: 2px;
-  padding: 6px 40px;
+  margin-top: 40px;
+  margin-right: 150px;
+  padding: 10px 10px;
   color: #5BA8C6;
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 25px;
+  font-family: sofia-pro, sans-serif;
+  font-weight: 800;
   text-decoration: none;
   text-transform: uppercase;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
 
+#prev{
+  margin-left: 150px;
+}
+
 .card {
   background: #FFFFFF;
   width:800px;
-  height: 1100px;
+  height: 1200px;
   margin-top: 40%;
   transform: translateX(12%);
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   box-sizing: border-box;
   padding: 20px;
   text-align: center;
 }
 
-.products {
+.products{
   position: relative;
   overflow: hidden;
   -webkit-transition: 0.5s ease;
@@ -55,21 +61,48 @@ body {
   opacity: 1;
   visibility: visible;
 }
-
+.illo1{
+  width: 95%;
+  height: 95%;
+  transform: translateX(7%);
+}
+.illo2{
+  width: 95%;
+  height: 95%;
+  transform: translateX(-2%);
+  transform: translateY(12%);
+}
 .thumbnail {
   margin: 0 0 48px;
 }
 
 .title {
   margin: 10px 0 12px;
-  color: #D18B49;
-  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: sofia-pro, sans-serif;
+  font-weight: 700;
+  color: black;
+  font-size: 40px;
+  line-height: 37px;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
 
+#firstLine{
+  padding-top: 30px;
+}
+
+#lastLine{
+  padding-bottom: 10px;
+}
+
 .description {
-  margin: 0 0 48px;
+  font-family: sofia-pro, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  margin: 0 48px;
+  line-height: 34px;
+  font-size: 32px;
 }
 
 .footer {

@@ -22,25 +22,110 @@
     </div>
   </section>
 
-  <!--Carousel Card container-->
+  <!--Get Started screen and Carousel Card container-->
   <section class="GetStarted">
     <div class="card">
       <div class="products">
         <div class="product active" product-id="1">
           <div class="thumbnail"><img src="../webApp/images/illustration1.png"/ class="illo1"></div>
-          <h1 class="title">The Magnificent Stag</h1>
-          <p class="description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <h2 class="title">In just a few moments, you</h2>
+          <h1 class="title"> will control your devices.</h1>
+          <p class="description">All your tasks just one knock away,</p>
+          <p class="description">turn any surface into a touch</p>
+          <p class="description">interface thanks to knocki</p>
+          <p class="description" id="lastLine">technology.</p>
         </div>
         <div class="product" product-id="2">
-          <div class="thumbnail"><img src="../webApp/images/illustration2.png"/></div>
-          <h1 class="title">The Courageous Bear</h1>
-          <p class="description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <div class="thumbnail"><img src="../webApp/images/illustration2.png" class="illo2" /></div>
+          <h1 class="title" id="firstLine">With Knocki, any surface can</h1>
+          <h1 class="title">become a smart interface.</h1>
+          <p class="description">A simple and effective technology device.</p>
+          <p class="description">There’s no messy installation</p>
+          <p class="description">and no complicated setup.</p>
         </div>
       </div>
       <div class="footer"><a class="btn" id="prev" href="#" ripple="" ripple-color="#666666">Prev</a><a class="btn" id="next" href="#" ripple="" ripple-color="#666666">Next</a></div>
     </div>
+    <div class="GSbutton">
+      <button type="button" name="Get Started" class="signUp"> Get Started</button>
+    </div>
   </section>
-  <!--Carousel card end-->
+  <!-- Get started screen and Carousel card end-->
+
+  <!-- Account Screen start-->
+  <section class="AccountScreen">
+    <div class="introduction">
+      <div class="greetings">
+        <h1>Hi! We want to</h1>
+        <h1>know about you</h1>
+      </div>
+      <div class="instructions">
+        <h3>We will send you a verification email.</h3>
+      </div>
+    </div>
+    <div class="signupForm">
+      <label for="name"><b>NAME</b></label>
+      <input type="text" placeholder="John Doe" name="name" required>
+      <label for="email"><b>EMAIL</b></label>
+      <input type="text" placeholder="Email" name="email" required>
+      <label for="psw"><b>PASSWORD</b></label>
+      <input type="password" placeholder="Password" name="psw" required>
+    </div>
+    <div class="submitForm">
+      <button type="button" name="CreateAccount" class="signUp">Create Account</button>
+    </div>
+    <div class="loginbutton">
+      <button type="button" name="logInbutton" class="login-button">Log in</button>
+    </div>
+  </section>
+  <!-- Account Screen end-->
+
+  <!--All set message to user screen starts-->
+  <section class="AllSet">
+    <div class="MessagetoUser">
+      <div class="mainMessage">
+        <h1>You're all set.</h1>
+      </div>
+      <div class="detailsMessage">
+        <h3>We have sent you an email regarding your account.</h3>
+      </div>
+    </div>
+    <div class="nextSteps">
+      <div class="AddKnocki">
+        <button type="button" name="addnew" class="signUp">Add new Knocki</button>
+      </div>
+      <div class="SkipToMm">
+        <button type="button" name="skipto" class="login-button">Skip to main menu</button>
+      </div>
+    </div>
+  </section>
+  <!--All set message to user screen ends-->
+
+  <!--Log In account screen starts-->
+  <section class="Login-screen">
+    <div class="welcomeMessage">
+      <div class="mainMessage">
+        <h1>Welcome Back!</h1>
+      </div>
+      <div class="detailsMessage">
+        <h3>Sign in to continue.</h3>
+      </div>
+    </div>
+    <div class="signinForm">
+      <label for="email"><b>EMAIL</b></label>
+      <input type="text" placeholder="Email" name="email" required>
+      <label for="psw"><b>PASSWORD</b></label>
+      <input type="password" placeholder="Password" name="psw" required>
+    </div>
+    <div class="formLogin">
+      <button type="button" name="Login" class="signUp">Log in</button>
+    </div>
+    <div class="signupOption">
+      <button type="button" name="SignUp" class="login-button">Log in</button>
+    </div>
+
+  </section>
+  <!--Log In account screen ends-->
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
