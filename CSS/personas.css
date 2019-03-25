@@ -470,11 +470,13 @@ p:hover {
     .megaflex {
         flex-wrap: wrap;
         margin-top: 0%;
+        align-items: center;
+        justify-content: center;
     }
 
     .img {
-        width: 40%;
-        height: 40%;
+        width: 80%;
+        height: 80%;
         margin-top: 10%;
     }
 
@@ -484,6 +486,7 @@ p:hover {
 
     .desc {
         font-size: 20px;
+        width: 100%;
     }
 
     li:before {
