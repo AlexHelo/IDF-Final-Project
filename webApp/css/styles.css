@@ -46,9 +46,6 @@
     background-color: transparent;
   }
 
-  .firstScreen {
-    display: none;
-  }
 
   /*First screen CSS OVER*/
   .GSbutton {
@@ -194,4 +191,14 @@
 
   .formLogin{
     margin-left: 30%;
+    margin-top: 30%;
+  }
+
+  .signupOption{
+    margin-left: 54%;
+    margin-top: 60px;
+  }
+
+  .Login-screen{
+    display: none;
   }

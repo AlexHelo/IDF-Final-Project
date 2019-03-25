@@ -3,6 +3,7 @@
 
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <script src="../webApp/js/jquery-3.3.1.min.js"></script>
   <link rel="stylesheet" href="../webApp/css/style.css">
   <link href="../webApp/css/styles.css" rel="stylesheet">
   <meta charset="utf-8">
@@ -16,8 +17,8 @@
         <img src="../webApp/images/knockiLogoBlue.png" alt="Logo Knocki">
       </div>
       <div class="LSbuttons">
-        <button type="button" name="Sign Up" class="signUp"> Sign Up</button>
-        <button type="button" name="Log In" class="logIn"> Log In</button>
+        <button type="button" name="Sign Up" class="signUp" id="signUp-button"> Sign Up</button>
+        <button type="button" name="Log In" class="logIn" id="login-button"> Log In</button>
       </div>
     </div>
   </section>
@@ -47,7 +48,7 @@
       <div class="footer"><a class="btn" id="prev" href="#" ripple="" ripple-color="#666666">Prev</a><a class="btn" id="next" href="#" ripple="" ripple-color="#666666">Next</a></div>
     </div>
     <div class="GSbutton">
-      <button type="button" name="Get Started" class="signUp"> Get Started</button>
+      <button type="button" name="Get Started" class="signUp" id="get-Started"> Get Started</button>
     </div>
   </section>
   <!-- Get started screen and Carousel card end-->
@@ -75,7 +76,7 @@
       <button type="button" name="CreateAccount" class="signUp">Create Account</button>
     </div>
     <div class="loginbutton">
-      <button type="button" name="logInbutton" class="login-button">Log in</button>
+      <button type="button" name="logInbutton" class="login-button" id="lo">Log in</button>
     </div>
   </section>
   <!-- Account Screen end-->
@@ -121,15 +122,49 @@
       <button type="button" name="Login" class="signUp">Log in</button>
     </div>
     <div class="signupOption">
-      <button type="button" name="SignUp" class="login-button">Log in</button>
+      <button type="button" name="SignUp" class="login-button" id="sign">Sign Up</button>
     </div>
 
   </section>
   <!--Log In account screen ends-->
 
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
   <script src="js/index.js"></script>
+  <script type="text/javascript">
+    // Sign Up gets you to GetStarted screen
+    $('#signUp-button').on('click', function(){
+      $('.GetStarted').show();
+      $('.firstScreen').hide();
+    });
+    // Log in gets you to log in screen
+    $('#login-button').on('click', function(){
+      $('.Login-screen').show();
+      $('.firstScreen').hide();
+    });
+
+    // get Started button gets you to create screen account
+    $('#get-Started').on('click', function(){
+      $('.AccountScreen').show();
+      $('.GetStarted').hide();
+      $('.Login-screen').hide();
+    });
+
+    // Shows the log in screen when selected button in the AccountScreen screen
+
+    $('#lo').on('click', function(){
+      $('.Login-screen').show();
+      $('.AccountScreen').hide();
+      $('.GetStarted').hide();
+    });
+
+    //
+
+    $('#sign').on('click', function(){
+      $('.Login-screen').hide();
+      $('.AccountScreen').show();
+      $('.GetStarted').hide();
+    });
+  </script>
 </body>
 
 </html>

@@ -34,21 +34,22 @@ body {
   background: #FFFFFF;
   width:800px;
   height: 1200px;
-  margin-top: 40%;
-  transform: translateX(12%);
+  margin-top: 30%;
+  transform: translateX(11%);
   box-sizing: border-box;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 }
 
 .products{
-  position: relative;
   overflow: hidden;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
+  height: 948px;
 }
 
 .product {
+  height: 948px;
   position: absolute;
   top: 0;
   left: 0;
@@ -106,6 +107,8 @@ body {
 }
 
 .footer {
+  margin-top: 10%;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -116,12 +119,11 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 0 -12px -12px;
+
 }
 
 [ripple] {
   z-index: 1;
-  position: relative;
   overflow: hidden;
 }
 [ripple] .ripple {
