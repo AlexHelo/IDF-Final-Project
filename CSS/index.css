@@ -407,5 +407,22 @@ p:hover {
 
     }
 
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .left {
+        margin: 0;
+        width: 100%;
+    }
+
+    .right {
+        margin: 0;
+        width: 100%;
+    }
+
 
 }
