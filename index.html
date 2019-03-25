@@ -10,7 +10,7 @@
     </title>
     <link rel="icon" href="img/favicon.png">
     <link rel="stylesheet" href="CSS/index.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 
@@ -34,6 +34,39 @@
     </div>
 
 
+    <div class="mobileHeader">
+
+        <div class="itemM">
+            <button class="hamburger hamburger--spin " type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </div>
+
+        <a href="index.html">
+            <img class="logoM" src="img/ApolloLogo.png">
+        </a>
+
+    </div>
+
+    <div class="responsive-menu">
+        <ul>
+            <a href="members.html">
+                <li class="obj">Members</li>
+            </a>
+            <a href="benchmarking.html">
+                <li class="obj">Benchmarking</li>
+            </a>
+            <a href="prototypes.html">
+                <li class="obj">Prototypes</li>
+            </a>
+            <a href="personas.html">
+                <li class="obj">Personas</li>
+            </a>
+        </ul>
+    </div>
+
 
     <div class="content">
 
@@ -41,6 +74,9 @@
 
         <img class="right" src="img/LowQualText3.png" width="40%" height="40%">
     </div>
+
+
+
     <script>
         window.onscroll = function () {
             myFunction()
@@ -59,8 +95,17 @@
     </script>
 
 
+    <script src="jquery-3.3.1.min.js"></script>
 
-    </div>
+
+
+    <script>
+        var $hamburger = $(".hamburger");
+        $hamburger.on("click", function (e) {
+            $hamburger.toggleClass("is-active");
+            $('.responsive-menu').slideToggle('expand')
+        });
+    </script>
 
 
 </body>

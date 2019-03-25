@@ -10,6 +10,7 @@
     </title>
     <link rel="icon" href="favicon.png">
     <link rel="stylesheet" href="CSS/members.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 
@@ -31,9 +32,46 @@
             <p>Personas</p>
         </a>
     </div>
+
+    <div class="mobileHeader">
+
+        <div class="itemM">
+            <button class="hamburger hamburger--spin " type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </div>
+
+        <a href="index.html">
+            <img class="logoM" src="img/ApolloLogo.png">
+        </a>
+
+
+    </div>
+
+    <div class="responsive-menu">
+        <ul>
+            <a href="members.html">
+                <li class="obj">Members</li>
+            </a>
+            <a href="benchmarking.html">
+                <li class="obj">Benchmarking</li>
+            </a>
+            <a href="prototypes.html">
+                <li class="obj">Prototypes</li>
+            </a>
+            <a href="personas.html">
+                <li class="obj">Personas</li>
+            </a>
+        </ul>
+    </div>
     <br>
     <br>
     <br>
+
+
+
 
     <div class="content">
 
@@ -77,7 +115,8 @@
                 <h1 class="desc"> My name is Gina and I am 19 years old. I like to watch Netflix, read and spend time
                     with the
                     people I love; I consider myself a clueless person, cheerful and a little bit loudy. I'm studying
-                    ITC because I'm interested in cybersecurity and I hope that one day i will be able to work on that.</h1>
+                    ITC because I'm interested in cybersecurity and I hope that one day i will be able to work on that.
+                </h1>
 
             </div>
 
@@ -85,7 +124,70 @@
         </div>
 
 
+
+
+
+
+        <div class="mobileBox">
+            <img class="box hvr-grow pfp" src="img/pfp1.png">
+            <div class="text">
+                <h1 class="title">Viridiana Truijillo</h1>
+                <h1 class="career">LCMD - 6th Semester </h1>
+                <h1 class="desc">Hardworking and energetic Communications and Media student with a passion for UI/UX
+                    design.
+                    Managing deadlines, persistence and efficiency in fast-paced environments are skills acquired from
+                    my design courses, media manager and operations experience. Dedicated, excellent team player and
+                    avid problem-solver. </h1>
+            </div>
+
+
+            <img class="box hvr-grow pfp" src="img/pfp2.png">
+            <div class="text">
+                <h1 class="title">Alex Hernandez</h1>
+                <h1 class="career">ITC - 2nd Semester </h1>
+                <h1 class="desc"> SC student interested in cybersecurity and machine learning. I try to approach SC
+                    with a creative programming mentality using programs like processing and then adapting it with NEAT
+                    to see how computers learn. In my free time I enjoy making short films, reading, playing video
+                    games and watching movies. </h1>
+
+            </div>
+
+            <img class="box hvr-grow pfp" src="img/pfp3.png">
+            <div class="text">
+                <h1 class="title">Alejandra Cobo</h1>
+                <h1 class="career">LCMD - 5th Semester </h1>
+                <h1 class="desc"> Comunication and Social Media student. Passionate of sports, marketing and music. My
+                    favorite hobbies are play soccer, tennis and go to the cinema.</h1>
+
+
+            </div>
+            <img class="box hvr-grow pfp" src="img/pfp4.png">
+            <div class="text">
+                <h1 class="title">Georgina Gámez</h1>
+                <h1 class="career">ITC - 2nd Semester </h1>
+                <h1 class="desc"> My name is Gina and I am 19 years old. I like to watch Netflix, read and spend time
+                    with the
+                    people I love; I consider myself a clueless person, cheerful and a little bit loudy. I'm studying
+                    ITC because I'm interested in cybersecurity and I hope that one day i will be able to work on that.
+                </h1>
+
+            </div>
+        </div>
+
     </div>
     </div>
     </div>
+
+    <script src="jquery-3.3.1.min.js"></script>
+
+
+
+    <script>
+        var $hamburger = $(".hamburger");
+        $hamburger.on("click", function (e) {
+            $hamburger.toggleClass("is-active");
+            $('.responsive-menu').slideToggle('expand')
+        });
+    </script>
+
 </body>
