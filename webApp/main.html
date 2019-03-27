@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../webApp/js/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="../webApp/css/styleMain.css">
+  <title>main</title>
+</head>
+
+<body>
+  <section class="hamburger-menu" id="mySidenav">
+    <img src="../webApp/images/menuClose.png" alt="close icon" class="closebtn" onclick = "closeNav()">
+    <div class="menu">
+      <div class="menu-items">
+        <a href="#">Home</a>
+        <a href="#">Profile</a>
+        <a href="#">FAQ</a>
+        <a href="#">Settings</a>
+      </div>
+    </div>
+
+  </section>
+  <section class="parentView">
+    <div class="header">
+      <div class="nav-bar">
+        <img src="../webApp/images/menu@2x.png" alt="ham menu" class="hamMenu" onclick = "openNav()">
+        <img src="../webApp/images/knockiLogoBlue.png" alt="logo" id="logo-nav">
+      </div>
+    </div>
+    <!--End of header-->
+    <div class="title">
+      <h1>Where will your knocki be?</h1>
+    </div>
+    <div class="settingsContainer">
+      <!--Location section in settings-->
+      <div class="location">
+        <img src="../webApp/images/Locicon.png" alt="" class="settingsicon">
+        <div class="buttonsLoc">
+          <button type="button" name="Home" class="buttonSetting" id="homeB"> Home</button>
+          <button type="button" name="Business" class="buttonSetting" id="businessB">Business</button>
+          <button type="button" name="Other" class="otherSetting" id="otherB">Other</button>
+        </div>
+      </div>
+      <!--Room section in settings-->
+      <div class="room">
+        <img src="../webApp/images/Roomicon.png" alt="" class="settingsicon">
+        <input type="text" placeholder="Ex. Kitchen" name="Room" required id="placeRoom">
+        <div class="labelRoom">
+          <label for="Room" id="roomlabel"><b>Room</b></label>
+        </div>
+      </div>
+      <!--Surface section in settings-->
+      <div class="Surface">
+        <img src="../webApp/images/Wallicon.png" alt="" class="settingsicon">
+        <input type="text" placeholder="Ex. Wall" name="Surface" required id="surfaceInput">
+        <div class="classSurface">
+          <label for="Surface"><b>Surface</b></label>
+        </div>
+      </div>
+    </div>
+    <button type="button" name="Done" class="doneSubmit" id="doneSettings">Done</button>
+  </section>
+  <!--First settings parent view coded-->
+  <section class="ConectScreen">
+    <div class="header">
+      <div class="nav-bar">
+        <img src="../webApp/images/menu@2x.png" alt="ham menu" class="hamMenu" onclick = "openNav()">
+        <img src="../webApp/images/knockiLogoBlue.png" alt="logo" id="logo-nav">
+      </div>
+    </div>
+    <div class="title" id="title2">
+      <h1>Connect to your <span>Knocki.</span></h1>
+    </div>
+    <div class="instructions">
+      <p>Bring your knocki device</p>
+      <p>near your phone.</p>
+    </div>
+    <div class="illustration">
+      <img src="../webApp/images/knockiIllustration.png" alt="" id="knockiIllustration">
+    </div>
+    <div class="butDone">
+      <button type="button" name="Done" class="nextConnect" id="doneSettings">Next</button>
+    </div>
+  </section>
+  <!--Connect screen ends and starts selection of technology-->
+  <section class="selectTech">
+    <div class="header">
+      <div class="nav-bar">
+        <img src="../webApp/images/menu@2x.png" alt="ham menu" class="hamMenu" onclick = "openNav()">
+        <img src="../webApp/images/knockiLogoBlue.png" alt="logo" id="logo-nav">
+      </div>
+    </div>
+    <div class="instructions" id="instructionsTech">
+      <p>Tap into the technology</p>
+      <p>you want to set.</p>
+    </div>
+    <div class="techSections">
+      <button type="button" name="button" class="techButton" id="lightbulbButton">
+        <img src="../webApp/images/lightbulbIcon.png" alt="" class="techIcon">
+        <div class="description">
+          <h1 class="hdescription">Light control.</h1>
+          <p class="pdescription">Turn your lights on/off.</p>
+        </div>
+      </button>
+      <!--First (lightbulb) Button ends-->
+      <button type="button" name="button" class="techButton" id="phoneButton">
+        <img src="../webApp/images/cellphoneIcon.png" alt="" class="techIcon">
+        <div class="description">
+          <h1 class="hdescription">Find your phone.</h1>
+          <p class="pdescription">Make your phone ring.</p>
+        </div>
+      </button>
+      <!--Cellphone button ends-->
+      <button type="button" name="button" class="techButton" id="climateButton">
+        <img src="../webApp/images/temperatureIcon.png" alt="" class="techIcon" id="tempimg">
+        <div class="description">
+          <h1 class="hdescription">Climate control.</h1>
+          <p class="pdescription">Set the desired temperature.</p>
+        </div>
+      </button>
+      <!--Temperature button ends-->
+      <button type="button" name="button" class="techButton" id="doorButton">
+        <img src="../webApp/images/houseIcon.png" alt="" class="techIcon" id="housimg">
+        <div class="description">
+          <h1 class="hdescription">Surveillance.</h1>
+          <p class="pdescription">Know if someone is at the door.</p>
+        </div>
+      </button>
+      <!--Surveillance button ends-->
+      <button type="button" name="button" class="techButton" id="alarmButton">
+        <img src="../webApp/images/clockIcon.png" alt="" class="techIcon" id="clockimg">
+        <div class="description">
+          <h1 class="hdescription">Manage Alarms.</h1>
+          <p class="pdescription">Set and snooze your alarms.</p>
+        </div>
+      </button>
+      <!--Alarms button ends-->
+      <button type="button" name="button" class="techButton" id="coffeeButton">
+        <img src="../webApp/images/coffeMakerIcon.png" alt="" class="techIcon" id="coffeimg">
+        <div class="description">
+          <h1 class="hdescription">Brew Coffee.</h1>
+          <p class="pdescription">Start your coffee machine.</p>
+        </div>
+      </button>
+      <!--Coffee button ends-->
+      <button type="button" name="button" class="techButton" id="alertsButton">
+        <img src="../webApp/images/bellIcon.png" alt="" class="techIcon" id="bellimg">
+        <div class="description">
+          <h1 class="hdescription">Manage Alerts.</h1>
+          <p class="pdescription">Know when your mails and emails arrive.</p>
+        </div>
+      </button>
+      <!--Alerts button ends-->
+      <button type="button" name="button" class="techButton" id="playButton">
+        <img src="../webApp/images/musicIcon.png" alt="" class="techIcon" id="musicimg">
+        <div class="description">
+          <h1 class="hdescription">Play your music.</h1>
+          <p class="pdescription">Skip, play, pause your music.</p>
+        </div>
+      </button>
+      <!--Music button ends-->
+      <button type="button" name="button" class="techButton" id="lampButton">
+        <img src="../webApp/images/lampIcon.png" alt="" class="techIcon" id="lampimg">
+        <div class="description">
+          <h1 class="hdescription">Mood Control.</h1>
+          <p class="pdescription">Dim the lights and play music.</p>
+        </div>
+      </button>
+      <!--Lamp button ends-->
+      <button type="button" name="button" class="techButton" id="textingButton">
+        <img src="../webApp/images/textingIcon.png" alt="" id="textimg">
+        <div class="description">
+          <h1 class="hdescription">Texting.</h1>
+          <p class="pdescription">Notify when leaving or arriving.</p>
+        </div>
+      </button>
+      <!--TExting button ends-->
+    </div>
+    <button type="button" name="Done" class="doneSubmit" id="doneTech">Done</button>
+  </section>
+  <section class="savingAnimationScreen">
+    <div class="header">
+      <div class="nav-bar">
+        <img src="../webApp/images/menu@2x.png" alt="ham menu" class="hamMenu" onclick = "openNav()">
+        <img src="../webApp/images/knockiLogoBlue.png" alt="logo" id="logo-nav">
+      </div>
+    </div>
+    <div class="title" id="titleR">
+      <h1><span>Record your pattern.</span></h1>
+    </div>
+    <div class="instructions" id="instruR">
+      <p>Please knock on the surface where</p>
+      <p>your knocki is.</p>
+    </div>
+    <div class="progressCircle">
+      <div class="flex-wrapper">
+        <div class="single-chart">
+          <svg viewBox="0 0 36 36" class="circular-chart blue">
+            <path class="circle" stroke-dasharray="100, 100" d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831" />
+          </svg>
+        </div>
+      </div>
+      <button type="button" name="Done" class="doneSubmit" id="donePattern">Done</button>
+      <button type="button" name="Record" class="greyButton" id="recordAgain"> Record Again </button>
+  </section>
+  <!--Script sections-->
+  <script type="text/javascript">
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "80vw";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0vw";
+    }
+
+  </script>
+</body>
+
+</html>

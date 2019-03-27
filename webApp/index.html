@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../webApp/css/style.css">
   <link href="../webApp/css/styles.css" rel="stylesheet">
   <meta charset="utf-8">
-  <title></title>
+  <title>Knocki</title>
 </head>
 
 <body>
@@ -73,7 +73,7 @@
       <input type="password" placeholder="Password" name="psw" required>
     </div>
     <div class="submitForm">
-      <button type="button" name="CreateAccount" class="signUp">Create Account</button>
+      <button type="button" name="CreateAccount" class="signUp" id="create">Create Account</button>
     </div>
     <div class="loginbutton">
       <button type="button" name="logInbutton" class="login-button" id="lo">Log in</button>
@@ -162,6 +162,13 @@
     $('#sign').on('click', function(){
       $('.Login-screen').hide();
       $('.AccountScreen').show();
+      $('.GetStarted').hide();
+    });
+
+    $('#create').on('click', function(){
+      $('.AccountScreen').hide();
+      $('.Login-screen').hide();
+      $('.AllSet').show();
       $('.GetStarted').hide();
     });
   </script>
