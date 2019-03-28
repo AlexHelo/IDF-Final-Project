@@ -1,0 +1,166 @@
+@import url("https://use.typekit.net/lie7ipn.css");
+
+body {
+  font-family: sofia-pro, sans-serif;
+  font-style: normal;
+}
+
+.hamburger-menu {
+  position: fixed;
+  height: 100%;
+  background-color: rgba(255, 255, 255, .8);
+  border-color: transparent;
+  filter: drop-shadow(0px 2px 5px #B8B7B5);
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  width: 0;
+  z-index: 1000;
+  transition: 0.5s;
+}
+
+.menu-items {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-items a {
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 80px;
+  transition: 0.3s;
+}
+
+.menu-items a:visited {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.closebtn {
+  width: 7%;
+  padding-left: 25px;
+  padding-top: 20px;
+}
+
+.header {
+  width: 100vw;
+  height: 70px;
+}
+
+.nav-bar {
+  height: 70px;
+  background-color: #F2F4F5;
+  filter: drop-shadow(0px 2px 5px #B8B7B5);
+}
+
+.hamMenu {
+  position: relative;
+  padding-left: 6%;
+  width: 5%;
+  top: 15px;
+  object-fit: contain;
+}
+
+#logo-nav {
+  width: 25%;
+  transform: translateY(70%);
+  margin-left: 25%;
+}
+/*Starts my knockis/home styles is in home.html*/
+
+#titleMy {
+  margin-top: 10%;
+  margin-left: 35%;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.knockisHolder {
+  margin-left: 6.5%;
+  margin-top: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: absolute;
+}
+
+.detailsKnocki {
+  width: 40vw;
+  height: 190px;
+  border-radius: 9px;
+  background-image: url(../images/backgroundKnocki.png);
+  background-position: -80px -150px;
+  text-align: center;
+}
+
+.detailsKnocki{
+  font-family: sofia-pro, sans-serif;
+  color: white;
+  font-size: 17px;
+}
+
+#knockiTitle{
+  transform: translateY(260%);
+}
+.detailsp p{
+  padding-bottom: 2%;
+}
+
+.detailsp {
+  margin-top: 50%;
+  font-weight: 200;
+}
+
+#add-new-legend h1 {
+  transform: translateY(510%);
+  line-height: 7px;
+}
+
+.iconAdd img{
+  margin-top: 28%;
+  width: 50%;
+}
+
+.myKnockis{
+  /*Change to display none*/
+}
+
+.containerKnocki {
+  transform: translate(7%, 20%);
+  width: 350px;
+  height: 202px;
+  background-image: url(../images/selectedKnocki.png);
+  background-position: 0px 0px;
+  background-size: 100%;
+}
+
+#chevronBack{
+  margin-top: 3%;
+  margin-left: 2%;
+  width: 12%;
+}
+
+.infoKnocki {
+  margin-top: 16%;
+  margin-left: 8%;
+}
+
+.Location img {
+  width: 7%;
+  margin-left: 73%;
+  margin-top: 3%;
+  position: absolute;
+}
+
+.Location p {
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 45px;
+}
+
+.editKnocki {
+  display: none;
+}

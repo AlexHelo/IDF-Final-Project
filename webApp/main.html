@@ -23,10 +23,10 @@
     <img src="../webApp/images/menuClose.png" alt="close icon" class="closebtn" onclick = "closeNav()">
     <div class="menu">
       <div class="menu-items">
-        <a href="#">Home</a>
-        <a href="#">Profile</a>
-        <a href="#">FAQ</a>
-        <a href="#">Settings</a>
+        <a href="../webApp/home.html">Home</a>
+        <a href="../webApp/profile.html">Profile</a>
+        <a href="https://twitter.com/knocki?lang=en" target="_blank">Support</a>
+        <a href="../webApp/settings.html">Settings</a>
       </div>
     </div>
   </section>
@@ -188,36 +188,13 @@
           </svg>
         </div>
       </div>
-      <button type="button" name="Done" class="doneSubmit" id="donePattern">Done</button>
+      <a href="../webApp/home.html">
+        <button type="button" name="Done" class="doneSubmit" id="donePattern">Done</button>
+      </a>
       <button type="button" name="Record" class="greyButton" id="recordAgain"> Record Again </button>
   </section>
-  <section class="myKnockis">
-    <div class="title" id="titleMy">
-      <h1>MY KNOCKIS</h1>
-    </div>
-    <div class="knockisHolder">
-      <button type="button" name="addedKnocki">
-        <div class="detailsKnocki">
-          <h1 id="knockiTitle">Knocki</h1>
-          <div class="detailsp">
-            <p id="knockilocation">Location</p>
-            <p id="roomlocation">Room</p>
-          </div>
-        </div>
-      </button>
-      <!--button with registered knocki-->
-      <button type="button" name="addNew">
-        <div class="detailsKnocki" id="add-new-legend">
-          <h1>Add a</h1><br>
-          <h1>new</h1><br>
-          <h1>Knocki</h1>
-          <div class="iconAdd">
-            <img src="../webApp/images/addIcon.png" alt="">
-          </div>
-        </button>
-        </div>
-    </div>
-  </section>
+
+
   <!--Script sections-->
   <script type="text/javascript">
     function openNav() {
@@ -227,6 +204,24 @@
     function closeNav() {
       document.getElementById("mySidenav").style.width = "0vw";
     }
+
+    $('#doneSettings').on('click', function(){
+      $('.selectTech').show();
+      $('.parentView').hide();
+    });
+
+    $('.techButton').on('click', function() {
+      // Before updating the UI, toggle every `.key-n` to disabled.
+      $('.techButton').css('background-color', 'white');
+
+      // Toggle ONLY the selected `key-n` to active
+      $(this).css('background-color', '#DEEBF0');
+    });
+
+    $('#doneTech').on('click', function(){
+      $('.selectTech').hide();
+      $('.savingAnimationScreen').show();
+    });
 
   </script>
 </body>
