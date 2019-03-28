@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../webApp/js/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="../webApp/css/styleExtras.css">
+  <title>main</title>
+</head>
+
+<body>
+  <section class="navBar">
+    <div class="header">
+      <div class="nav-bar">
+        <img src="../webApp/images/menu@2x.png" alt="ham menu" class="hamMenu" onclick = "openNav()">
+        <h1 class="navigationBarTitle">
+        <span id="settings">Account</span>
+      </h1>
+      </div>
+    </div>
+  </section>
+  <section class="hamburger-menu" id="mySidenav">
+    <img src="../webApp/images/menuClose.png" alt="close icon" class="closebtn" onclick = "closeNav()">
+    <div class="menu">
+      <div class="menu-items">
+        <a href="../webApp/home.html">Home</a>
+        <a href="../webApp/profile.html">Profile</a>
+        <a href="https://twitter.com/knocki?lang=en" target="_blank">Support</a>
+        <a href="../webApp/settings.html">Settings</a>
+      </div>
+    </div>
+  </section>
+  <!--Section 1 /screen 1-->
+  <section class="Profile">
+    <div class="accountForm">
+      <label for="name"><b>Name</b></label>
+      <p>John Doe</p>
+      <label for="email"><b>Email</b></label>
+      <p>loremipsum@dolor.sit</p>
+      <label for="psw"><b>Password</b></label>
+      <p>············</p>
+    </div>
+  </section>
+  <script type="text/javascript">
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "80vw";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0vw";
+    }
+
+  </script>
+</body>
+
+</html>

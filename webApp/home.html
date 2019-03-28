@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../webApp/js/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="../webApp/css/homeStyles.css">
+  <title>home</title>
+</head>
+
+<body>
+  <section class="navBar">
+    <div class="header">
+      <div class="nav-bar">
+        <img src="../webApp/images/menu@2x.png" alt="ham menu" class="hamMenu" onclick="openNav()">
+        <img src="../webApp/images/knockiLogoBlue.png" alt="logo" id="logo-nav">
+      </div>
+    </div>
+  </section>
+  <section class="hamburger-menu" id="mySidenav">
+    <img src="../webApp/images/menuClose.png" alt="close icon" class="closebtn" onclick="closeNav()">
+    <div class="menu">
+      <div class="menu-items">
+        <a href="../webApp/home.html">Home</a>
+        <a href="../webApp/profile.html">Profile</a>
+        <a href="https://twitter.com/knocki?lang=en" target="_blank">Support</a>
+        <a href="../webApp/settings.html">Settings</a>
+      </div>
+    </div>
+  </section>
+  <section class="myKnockis">
+    <div class="title" id="titleMy">
+      <h1>MY KNOCKIS</h1>
+    </div>
+    <div class="knockisHolder">
+      <button type="button" name="addedKnocki">
+        <div class="detailsKnocki">
+          <h1 id="knockiTitle">Knocki</h1>
+          <div class="detailsp">
+            <p id="knockilocation">Location</p>
+            <p id="roomlocation">Room</p>
+          </div>
+        </div>
+      </button>
+      <!--button with registered knocki-->
+      <a href="../webApp/main.html">
+      <button type="button" name="addNew">
+        <div class="detailsKnocki" id="add-new-legend">
+          <h1>Add a</h1><br>
+          <h1>new</h1><br>
+          <h1>Knocki</h1>
+          <div class="iconAdd">
+            <img src="../webApp/images/addIcon.png" alt="">
+          </div>
+      </button>
+      </a>
+    </div>
+  </section>
+
+  <section class="editKnocki">
+    <section class="knockiVisible">
+      <div class="containerKnocki">
+        <img src="../webApp/images/backChevron.png" alt="" id="chevronBack">
+      </div>
+      <div class="infoKnocki">
+        <div class="Location">
+          <img src="../webApp/images/editIcon.png" alt="">
+          <p>Location</p>
+          <p>Room</p>
+          <p>Technology selected</p>
+          <!--Make editable: document.getElementById("myP").contentEditable = "true";-->
+        </div>
+      </div>
+    </section>
+  </section>
+
+
+
+  <script type="text/javascript">
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "80vw";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0vw";
+    }
+
+  </script>
+</body>
+
+</html>

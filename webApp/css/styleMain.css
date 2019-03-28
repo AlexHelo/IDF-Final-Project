@@ -60,8 +60,9 @@ body {
 .hamMenu {
   position: relative;
   padding-left: 6%;
-  transform: translateY(95%);
-  width: 7%;
+  width: 5%;
+  top: 15px;
+  object-fit: contain;
 }
 
 #logo-nav {
@@ -190,7 +191,7 @@ input:focus {
 }
 
 .parentView {
-  display: none;
+
 }
 
 /* First screen/section ends*/
@@ -315,7 +316,7 @@ span {
 
 #doneTech {
   position: absolute;
-  transform: translateY(1180%);
+  transform: translateY(1400%);
   margin-bottom: 30px;
 }
 
@@ -359,67 +360,13 @@ span {
 
 .greyButton {
   font-family: sofia-pro, sans-serif;
+  font-size: 19px;
   color: #90949A;
   font-weight: 200;
   text-align: center;
-  transform: translate(50%, 520%);
+  transform: translate(43%, 810%);
 }
 
 .savingAnimationScreen {
   display: none;
-}
-
-/*Starts my knockis/home styles */
-
-#titleMy {
-  margin-top: 28%;
-  margin-left: 35%;
-  font-weight: 300;
-  font-size: 20px;
-}
-
-.knockisHolder {
-  margin-left: 6.5%;
-  margin-top: 40%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  position: absolute;
-}
-
-.detailsKnocki {
-  width: 40vw;
-  height: 25vh;
-  border-radius: 9px;
-  background-image: url(../images/backgroundKnocki.png);
-  background-position: -80px -150px;
-  text-align: center;
-}
-
-.detailsKnocki{
-  font-family: sofia-pro, sans-serif;
-  color: white;
-  font-size: 17px;
-}
-
-#knockiTitle{
-  transform: translateY(260%);
-}
-.detailsp p{
-  padding-bottom: 2%;
-}
-
-.detailsp {
-  margin-top: 50%;
-  font-weight: 200;
-}
-
-#add-new-legend h1 {
-  transform: translateY(510%);
-  line-height: 7px;
-}
-
-.iconAdd img{
-  margin-top: 28%;
-  width: 60%;
 }
