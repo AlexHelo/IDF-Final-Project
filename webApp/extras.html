@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../webApp/js/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="../webApp/css/styleExtras.css">
+  <title>main</title>
+</head>
+
+<body>
+  <section class="navBar">
+    <div class="header">
+      <div class="nav-bar">
+        <img src="../webApp/images/menu@2x.png" alt="ham menu" class="hamMenu" onclick="openNav()">
+        <h1 id="labelScren">Settings</h1>
+      </div>
+    </div>
+  </section>
+  <!--Section 1 /screen 1-->
+  <section class="Profile">
+    <div class="accountForm">
+      <label for="name"><b>NAME</b></label>
+      <input type="text" placeholder="John Doe" name="name" required>
+      <label for="email"><b>EMAIL</b></label>
+      <input type="text" placeholder="Email" name="email" required>
+      <label for="psw"><b>PASSWORD</b></label>
+      <input type="password" placeholder="Password" name="psw" required>
+    </div>
+    <div class="logOutBtn">
+      <button type="button" name="Log Out" class="logOut"> Log out</button>
+    </div>
+  </section>
+  <!--Section screen 2-->
+  <section class="Settings">
+    <div class="Preferences">
+      <h1>Preferences</h1>
+      <img src="../webApp/images/iconArrow.png" alt="">
+    </div>
+    <div class="PushNot">
+      <h1>Push Notifications</h1>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="AllowM">
+      <h1>Push Notifications</h1>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="AutoUpd">
+      <h1>Push Notifications</h1>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+  body {
+    max-width: 767px;
+  }
+
+  .KnockiLogo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .LSbuttons {
+    width: 518px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .signUp {
+    font-family: sofia-pro, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+    color: white;
+    border-radius: 120px;
+    border-color: transparent;
+    width: 518px;
+    height: 150px;
+    background-color: #5BA8C6;
+  }
+
+  .logIn {
+    font-family: sofia-pro, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+    color: #5BA8C6;
+    border-radius: 120px;
+    border-color: #5BA8C6;
+    width: 518px;
+    height: 150px;
+    background-color: transparent;
+  }
+
+
+  /*First screen CSS OVER*/
+  .GSbutton {
+    width: 500px;
+    height: 150px;
+    transform: translateX(46%);
+  }
+
+  .GetStarted {
+    display: none;
+  }
+
+  /*Account screen CSS start*/
+  .AccountScreen {
+    max-width: 767px;
+  }
+
+  .introduction {
+    margin-top: 25%;
+    margin-left: 43%;
+    width: 350px;
+    text-align: center;
+  }
+
+  .greetings {
+    font-size: 48px;
+    line-height: 50px;
+  }
+
+  .instructions {
+    margin-top: 10%;
+    font-weight: 200;
+    font-size: 37px;
+    line-height: 41px;
+  }
+
+  .signupForm {
+    margin-top: 25%;
+    margin-left: 20%;
+  }
+
+  label {
+    font-size: 35px;
+    font-family: sofia-pro, sans-serif;
+    color: #C9C8C8;
+  }
+
+  input {
+    font-family: sofia-pro, sans-serif;
+    font-size: 40px;
+    width: 600px;
+    padding: 15px;
+    margin: 20px 0 50px 0;
+    border-width: 0px 0em 1px 0;
+    /* top right bottom left */
+    border-color: #707070;
+    cursor: text;
+  }
+
+  input:focus {
+    color: black;
+    outline: none;
+    box-shadow: 0 4px 2px -2px #B8B7B5;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .submitForm {
+    margin-left: 30%;
+    margin-top: 30%;
+  }
+
+  .login-button {
+    font-family: sofia-pro, sans-serif;
+    color: #90949A;
+    font-weight: 200;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .loginbutton {
+    margin-left: 55%;
+    margin-top: 30px;
+  }
+
+  .AccountScreen {
+    display: none;
+  }
+
+  /* All set message to user screen styles start*/
+  .AllSet {
+    max-width: 767px;
+    font-family: sofia-pro, sans-serif;
+  }
+
+  .MessagetoUser {
+    margin-top: 80%;
+    margin-left: 32%;
+    max-width: 500px;
+    max-height: 700px;
+    text-align: center;
+  }
+
+  .mainMessage {
+    font-size: 60px;
+    font-weight: normal;
+  }
+
+  .detailsMessage {
+    margin-top: 15%;
+    font-weight: 200;
+    font-size: 37px;
+    line-height: 45px;
+  }
+
+  .nextSteps {
+    margin-left: 30%;
+    margin-top: 50%;
+  }
+
+  .SkipToMm {
+    transform: translateX(15%);
+    margin-top: 50px;
+    width: 500px;
+  }
+
+  .AllSet{
+    display:none;
+  }
+
+  /*Login-screen styles start*/
+
+  .welcomeMessage{
+    margin-top: 30%;
+    margin-left: 30%;
+    text-align: center;
+  }
+
+  .signinForm{
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+
+  .formLogin{
+    margin-left: 30%;
+    margin-top: 30%;
+  }
+
+  .signupOption{
+    margin-left: 54%;
+    margin-top: 60px;
+  }
+
+  .Login-screen{
+    display: none;
+  }
