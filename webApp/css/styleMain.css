@@ -30,7 +30,7 @@ body {
   font-weight: 800;
   text-align: center;
   text-decoration: none;
-  padding-top: 30px;
+  padding-top: 80px;
   transition: 0.3s;
 }
 
@@ -39,7 +39,7 @@ body {
   color: inherit;
 }
 
-.closeMenu {
+.closebtn {
   width: 7%;
   padding-left: 25px;
   padding-top: 20px;
@@ -180,6 +180,10 @@ input:focus {
   background-color: #5BA8C6;
 }
 
+#doneSettings{
+  margin-top: 140%;
+}
+
 .location button:focus {
   color: #5BA8C6;
   border-color: #5BA8C6;
@@ -220,7 +224,7 @@ span {
 }
 
 .butDone {
-  margin-left: 2%;
+  margin-left: -1%;
 }
 
 .ConectScreen {
@@ -311,7 +315,7 @@ span {
 
 #doneTech {
   position: absolute;
-  transform: translateY(1350%);
+  transform: translateY(1180%);
   margin-bottom: 30px;
 }
 
@@ -357,9 +361,65 @@ span {
   font-family: sofia-pro, sans-serif;
   color: #90949A;
   font-weight: 200;
-  font-size: 16px;
   text-align: center;
   transform: translate(50%, 520%);
 }
 
-.savingAnimationScreen {}
+.savingAnimationScreen {
+  display: none;
+}
+
+/*Starts my knockis/home styles */
+
+#titleMy {
+  margin-top: 28%;
+  margin-left: 35%;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.knockisHolder {
+  margin-left: 6.5%;
+  margin-top: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: absolute;
+}
+
+.detailsKnocki {
+  width: 40vw;
+  height: 25vh;
+  border-radius: 9px;
+  background-image: url(../images/backgroundKnocki.png);
+  background-position: -80px -150px;
+  text-align: center;
+}
+
+.detailsKnocki{
+  font-family: sofia-pro, sans-serif;
+  color: white;
+  font-size: 17px;
+}
+
+#knockiTitle{
+  transform: translateY(260%);
+}
+.detailsp p{
+  padding-bottom: 2%;
+}
+
+.detailsp {
+  margin-top: 50%;
+  font-weight: 200;
+}
+
+#add-new-legend h1 {
+  transform: translateY(510%);
+  line-height: 7px;
+}
+
+.iconAdd img{
+  margin-top: 28%;
+  width: 60%;
+}

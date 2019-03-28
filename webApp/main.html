@@ -11,6 +11,14 @@
 </head>
 
 <body>
+  <section class="navBar">
+    <div class="header">
+      <div class="nav-bar">
+        <img src="../webApp/images/menu@2x.png" alt="ham menu" class="hamMenu" onclick = "openNav()">
+        <img src="../webApp/images/knockiLogoBlue.png" alt="logo" id="logo-nav">
+      </div>
+    </div>
+  </section>
   <section class="hamburger-menu" id="mySidenav">
     <img src="../webApp/images/menuClose.png" alt="close icon" class="closebtn" onclick = "closeNav()">
     <div class="menu">
@@ -21,15 +29,8 @@
         <a href="#">Settings</a>
       </div>
     </div>
-
   </section>
   <section class="parentView">
-    <div class="header">
-      <div class="nav-bar">
-        <img src="../webApp/images/menu@2x.png" alt="ham menu" class="hamMenu" onclick = "openNav()">
-        <img src="../webApp/images/knockiLogoBlue.png" alt="logo" id="logo-nav">
-      </div>
-    </div>
     <!--End of header-->
     <div class="title">
       <h1>Where will your knocki be?</h1>
@@ -65,12 +66,6 @@
   </section>
   <!--First settings parent view coded-->
   <section class="ConectScreen">
-    <div class="header">
-      <div class="nav-bar">
-        <img src="../webApp/images/menu@2x.png" alt="ham menu" class="hamMenu" onclick = "openNav()">
-        <img src="../webApp/images/knockiLogoBlue.png" alt="logo" id="logo-nav">
-      </div>
-    </div>
     <div class="title" id="title2">
       <h1>Connect to your <span>Knocki.</span></h1>
     </div>
@@ -82,17 +77,11 @@
       <img src="../webApp/images/knockiIllustration.png" alt="" id="knockiIllustration">
     </div>
     <div class="butDone">
-      <button type="button" name="Done" class="nextConnect" id="doneSettings">Next</button>
+      <button type="button" name="Done" class="doneSubmit" id="nextConnect">Next</button>
     </div>
   </section>
   <!--Connect screen ends and starts selection of technology-->
   <section class="selectTech">
-    <div class="header">
-      <div class="nav-bar">
-        <img src="../webApp/images/menu@2x.png" alt="ham menu" class="hamMenu" onclick = "openNav()">
-        <img src="../webApp/images/knockiLogoBlue.png" alt="logo" id="logo-nav">
-      </div>
-    </div>
     <div class="instructions" id="instructionsTech">
       <p>Tap into the technology</p>
       <p>you want to set.</p>
@@ -182,12 +171,6 @@
     <button type="button" name="Done" class="doneSubmit" id="doneTech">Done</button>
   </section>
   <section class="savingAnimationScreen">
-    <div class="header">
-      <div class="nav-bar">
-        <img src="../webApp/images/menu@2x.png" alt="ham menu" class="hamMenu" onclick = "openNav()">
-        <img src="../webApp/images/knockiLogoBlue.png" alt="logo" id="logo-nav">
-      </div>
-    </div>
     <div class="title" id="titleR">
       <h1><span>Record your pattern.</span></h1>
     </div>
@@ -207,6 +190,33 @@
       </div>
       <button type="button" name="Done" class="doneSubmit" id="donePattern">Done</button>
       <button type="button" name="Record" class="greyButton" id="recordAgain"> Record Again </button>
+  </section>
+  <section class="myKnockis">
+    <div class="title" id="titleMy">
+      <h1>MY KNOCKIS</h1>
+    </div>
+    <div class="knockisHolder">
+      <button type="button" name="addedKnocki">
+        <div class="detailsKnocki">
+          <h1 id="knockiTitle">Knocki</h1>
+          <div class="detailsp">
+            <p id="knockilocation">Location</p>
+            <p id="roomlocation">Room</p>
+          </div>
+        </div>
+      </button>
+      <!--button with registered knocki-->
+      <button type="button" name="addNew">
+        <div class="detailsKnocki" id="add-new-legend">
+          <h1>Add a</h1><br>
+          <h1>new</h1><br>
+          <h1>Knocki</h1>
+          <div class="iconAdd">
+            <img src="../webApp/images/addIcon.png" alt="">
+          </div>
+        </button>
+        </div>
+    </div>
   </section>
   <!--Script sections-->
   <script type="text/javascript">
