@@ -120,6 +120,15 @@ p:hover {
  
 }
 
+.center {
+   
+    margin-top: 40%;
+}
+
+.mcenter {
+    display: none;
+    
+}
 
 
 
@@ -428,6 +437,13 @@ p:hover {
 .knocki2 {
     width: 90%;
     height: 90%;
+  }
+
+  .mcenter {
+      display: block;
+      margin-top: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
   }
 
 

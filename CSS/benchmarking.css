@@ -754,7 +754,8 @@ p:hover {
     }
 
     .rightrespo{
-        width: 40%;
-        font-size: 120%;
+        width: 45%;
+        font-size: 100%;
+        text-align: center;
     }
 }
