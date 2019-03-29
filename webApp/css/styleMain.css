@@ -316,7 +316,7 @@ span {
 
 #doneTech {
   position: absolute;
-  transform: translateY(1400%);
+  transform: translateY(720px);
   margin-bottom: 30px;
 }
 
