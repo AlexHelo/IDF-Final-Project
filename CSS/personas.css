@@ -486,10 +486,11 @@ p:hover {
 
     .desc {
         font-size: 20px;
-        width: 100%;
+        width: 80%;
+        margin-top: 30px;
     }
 
-    li:before {
+    .list:before {
         content: "• ";
     }
 
