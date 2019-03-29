@@ -115,7 +115,10 @@ p:hover {
 }
 
 
-
+.contentresp {
+    display: none;
+ 
+}
 
 
 
@@ -408,21 +411,24 @@ p:hover {
     }
 
     .content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        display: none;
     }
 
-    .left {
-        margin: 0;
-        width: 100%;
-    }
+   .contentresp {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-around;
+}
 
-    .right {
-        margin: 0;
-        width: 100%;
-    }
+.knocki {
+  width: 90%;
+  height: 90%;
+}
+
+.knocki2 {
+    width: 90%;
+    height: 90%;
+  }
 
 
 }
