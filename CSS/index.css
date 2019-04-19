@@ -117,17 +117,17 @@ p:hover {
 
 .contentresp {
     display: none;
- 
+
 }
 
 .center {
-   
+
     margin-top: 40%;
 }
 
 .mcenter {
     display: none;
-    
+
 }
 
 
@@ -137,7 +137,7 @@ p:hover {
 
 @media only screen and (max-width: 900px) {
 
-    /* http://meyerweb.com/eric/tools/css/reset/ 
+    /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -382,6 +382,9 @@ p:hover {
         transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
 
+    .hamburger .hamburger--spin {
+      width: 30%;
+    }
     .header {
 
         display: none;
@@ -394,10 +397,10 @@ p:hover {
     }
 
     .logoM {
-        height: 55px;
-        width: 186px;
-        padding-right: 10px;
+        width: 30%;
+        transform: translate(85%, 40%);
     }
+
 
     .responsive-menu {
         background: #E5EBEB;

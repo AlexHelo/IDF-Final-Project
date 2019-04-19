@@ -1,497 +1,480 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 body {
-    background-image: url('Background.png');
-    background-position: center;
-    background-repeat: repeat;
-    position: relative;
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Raleway', sans-serif;
-    background-size: 100% auto;
+  background-image: url('Background.png');
+  background-position: center;
+  background-repeat: repeat;
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Raleway', sans-serif;
+  background-size: 100% auto;
 }
 
 :root {
-    --mainColor: #bac0c2;
+  --mainColor: #bac0c2;
 }
 
 .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: 50px;
-    padding-left: 10%;
-    padding-right: 10%;
-    font-family: 'Raleway', sans-serif;
-    filter: drop-shadow(0px 0px 25px rgba(255, 255, 255, 1));
-    z-index: 50;
-
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 50px;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-family: 'Raleway', sans-serif;
+  filter: drop-shadow(0px 0px 25px rgba(255, 255, 255, 1));
+  z-index: 50;
 }
 
 a {
-    color: #6b6f70;
-    text-decoration: none;
+  color: #6b6f70;
+  text-decoration: none;
 }
 
 p {
-    background:
-        linear-gradient(to bottom, var(--mainColor) 0%,
-        var(--mainColor) 100%);
-    background-position: 0 100%;
-    background-repeat: repeat-x;
-    background-size: 1px 1px;
-    color: #6b6f70;
-    text-decoration: none;
-    transition: background-size .2s;
+  background:
+    linear-gradient(to bottom, var(--mainColor) 0%,
+    var(--mainColor) 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 1px 1px;
+  color: #6b6f70;
+  text-decoration: none;
+  transition: background-size .2s;
 }
 
 p:hover {
-    background-size: 4px 50px;
+  background-size: 4px 50px;
 }
 
 .sticky {
-    position: fixed;
-    top: 0;
-    width: 80%;
-    background: white;
-
+  position: fixed;
+  top: 0;
+  width: 80%;
+  background: white;
 }
 
 .sticky+.content {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 .item {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .item:first-child>span {
-    margin-right: auto;
+  margin-right: auto;
 }
 
 .item:last-child>span {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .pics {
-    float: left;
-    width: 100%;
-    height: 1250px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    flex-direction: column;
-
+  float: left;
+  width: 100%;
+  height: 1250px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .persona {
-    display: flex;
-    flex-wrap: wrap;
-    width: 40%;
-    height: 50%;
-    margin-left: 5%;
-    flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+  height: 50%;
+  margin-left: 5%;
+  flex-direction: column;
 }
 
 .persona:first-child>span {
-    margin-right: auto;
+  margin-right: auto;
 }
 
 .persona:last-child>span {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .box {
-    display: flex;
-    border-radius: 50%;
-    width: 50%;
-    height: 50%;
-    margin-bottom: 15px;
-    margin-left: 15px;
-    border: 1px solid #021a40;
+  display: flex;
+  border-radius: 50%;
+  width: 50%;
+  height: 50%;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  border: 1px solid #021a40;
 }
 
 .desc {
-    display: flex;
-    width: 40%;
-    height: 350px;
-    font-family: 'Raleway', sans-serif;
-    font-size: 30;
-    flex-direction: column;
+  display: flex;
+  width: 40%;
+  height: 350px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30;
+  flex-direction: column;
 }
 
 .megaflex {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 5%;
-    margin-left: 4%;
-    margin-right: 4%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5%;
+  margin-left: 4%;
+  margin-right: 4%;
 }
 
 .img {
-    width: 20%;
-    height: 20%;
-    border-radius: 50%;
-    border: 1px solid #021a40;
-    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .3));
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  border: 1px solid #021a40;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .3));
 }
 
 .desc {
-
-    width: 40%;
-    height: 40%;
-    font-family: 'Raleway', sans-serif;
-    font-size: 30;
-
+  width: 40%;
+  height: 40%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30;
 }
 
 .midright {
-    margin-right: 10%;
+  margin-right: 10%;
 }
 
 .hvr-grow {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
 }
 
 .hvr-grow:hover,
 .hvr-grow:focus,
 .hvr-grow:active {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .mobileHeader {
-    display: none;
+  display: none;
 }
 
 .responsive-menu {
-    display: none;
+  display: none;
 }
-
 
 @media only screen and (max-width: 900px) {
 
-    /* http://meyerweb.com/eric/tools/css/reset/ 
+  /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
 
-    html,
-    body,
-    div,
-    span,
-    applet,
-    object,
-    iframe,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    blockquote,
-    pre,
-    a,
-    abbr,
-    acronym,
-    address,
-    big,
-    cite,
-    code,
-    del,
-    dfn,
-    em,
-    img,
-    ins,
-    kbd,
-    q,
-    s,
-    samp,
-    small,
-    strike,
-    strong,
-    sub,
-    sup,
-    tt,
-    var,
-    b,
-    u,
-    i,
-    center,
-    dl,
-    dt,
-    dd,
-    ol,
-    ul,
-    li,
-    fieldset,
-    form,
-    label,
-    legend,
-    table,
-    caption,
-    tbody,
-    tfoot,
-    thead,
-    tr,
-    th,
-    td,
-    article,
-    aside,
-    canvas,
-    details,
-    embed,
-    figure,
-    figcaption,
-    footer,
-    header,
-    hgroup,
-    menu,
-    nav,
-    output,
-    ruby,
-    section,
-    summary,
-    time,
-    mark,
-    audio,
-    video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font: inherit;
-        vertical-align: baseline;
-    }
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
 
-    /* HTML5 display-role reset for older browsers */
-    article,
-    aside,
-    details,
-    figcaption,
-    figure,
-    footer,
-    header,
-    hgroup,
-    menu,
-    nav,
-    section {
-        display: block;
-    }
+  body {
+    line-height: 1;
+  }
 
-    body {
-        line-height: 1;
-    }
+  ol,
+  ul {
+    list-style: none;
+  }
 
-    ol,
-    ul {
-        list-style: none;
-    }
+  blockquote,
+  q {
+    quotes: none;
+  }
 
-    blockquote,
-    q {
-        quotes: none;
-    }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
 
-    blockquote:before,
-    blockquote:after,
-    q:before,
-    q:after {
-        content: '';
-        content: none;
-    }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
 
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
-
-    /*!
+  /*!
  * Hamburgers
  * @description Tasty CSS-animated hamburgers
  * @author Jonathan Suh @jonsuh
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
-    .hamburger {
-        padding: 15px 15px;
-        display: inline-block;
-        cursor: pointer;
-        transition-property: opacity, filter;
-        transition-duration: 0.15s;
-        transition-timing-function: linear;
-        font: inherit;
-        color: inherit;
-        text-transform: none;
-        background-color: transparent;
-        border: 0;
-        margin: 0;
-        overflow: visible;
-    }
+  .hamburger {
+    padding: 15px 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+  }
 
-    .hamburger:hover {
-        opacity: 0.7;
-    }
+  .hamburger:hover {
+    opacity: 0.7;
+  }
 
-    .hamburger.is-active:hover {
-        opacity: 0.7;
-    }
+  .hamburger.is-active:hover {
+    opacity: 0.7;
+  }
 
-    .hamburger.is-active .hamburger-inner,
-    .hamburger.is-active .hamburger-inner::before,
-    .hamburger.is-active .hamburger-inner::after {
-        background-color: #000;
-    }
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::before,
+  .hamburger.is-active .hamburger-inner::after {
+    background-color: #000;
+  }
 
-    .hamburger-box {
-        width: 40px;
-        height: 24px;
-        display: inline-block;
-        position: relative;
-    }
+  .hamburger-box {
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
 
-    .hamburger-inner {
-        display: block;
-        top: 50%;
-        margin-top: -2px;
-    }
+  .hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+  }
 
-    .hamburger-inner,
-    .hamburger-inner::before,
-    .hamburger-inner::after {
-        width: 40px;
-        height: 4px;
-        background-color: #000;
-        border-radius: 4px;
-        position: absolute;
-        transition-property: transform;
-        transition-duration: 0.15s;
-        transition-timing-function: ease;
-    }
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: #000;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+  }
 
-    .hamburger-inner::before,
-    .hamburger-inner::after {
-        content: "";
-        display: block;
-    }
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    content: "";
+    display: block;
+  }
 
-    .hamburger-inner::before {
-        top: -10px;
-    }
+  .hamburger-inner::before {
+    top: -10px;
+  }
 
-    .hamburger-inner::after {
-        bottom: -10px;
-    }
+  .hamburger-inner::after {
+    bottom: -10px;
+  }
 
+  .hamburger--spin .hamburger-inner {
+    transition-duration: 0.22s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
 
-    .hamburger--spin .hamburger-inner {
-        transition-duration: 0.22s;
-        transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
+  .hamburger--spin .hamburger-inner::before {
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+  }
 
-    .hamburger--spin .hamburger-inner::before {
-        transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
-    }
+  .hamburger--spin .hamburger-inner::after {
+    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
 
-    .hamburger--spin .hamburger-inner::after {
-        transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
+  .hamburger--spin.is-active .hamburger-inner {
+    transform: rotate(225deg);
+    transition-delay: 0.12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
 
-    .hamburger--spin.is-active .hamburger-inner {
-        transform: rotate(225deg);
-        transition-delay: 0.12s;
-        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
+  .hamburger--spin.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+  }
 
-    .hamburger--spin.is-active .hamburger-inner::before {
-        top: 0;
-        opacity: 0;
-        transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
-    }
+  .hamburger--spin.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
 
-    .hamburger--spin.is-active .hamburger-inner::after {
-        bottom: 0;
-        transform: rotate(-90deg);
-        transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
+  .header {
+    display: none;
+  }
 
+  .mobileHeader {
+    display: flex;
+    background: white;
+    justify-content: space-between;
+  }
 
+  .logoM {
+    width: 30%;
+    transform: translate(85%, 40%);
+  }
 
-    .header {
+  .responsive-menu {
+    background: #E5EBEB;
+    -webkit-box-shadow: 2px 13px 17px -1px rgba(115, 115, 115, 1);
+    -moz-box-shadow: 2px 13px 17px -1px rgba(115, 115, 115, 1);
+    box-shadow: 2px 13px 17px -1px rgba(115, 115, 115, 1);
+  }
 
-        display: none;
-    }
+  .obj {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    color: #6b6f70;
+  }
 
-    .mobileHeader {
-        display: flex;
-        background: white;
-        justify-content: space-between;
-    }
+  .megaflex {
+    flex-wrap: wrap;
+    margin-top: 0%;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .logoM {
-        height: 55px;
-        width: 186px;
-        padding-right: 10px;
-    }
+  .img {
+    width: 80%;
+    height: 80%;
+    margin-top: 10%;
+  }
 
-    .responsive-menu {
-        background: #E5EBEB;
-        -webkit-box-shadow: 2px 13px 17px -1px rgba(115, 115, 115, 1);
-        -moz-box-shadow: 2px 13px 17px -1px rgba(115, 115, 115, 1);
-        box-shadow: 2px 13px 17px -1px rgba(115, 115, 115, 1);
-    }
+  .midright {
+    margin-right: 0%;
+  }
 
+  .desc {
+    font-size: 20px;
+    width: 80%;
+    margin-top: 30px;
+  }
 
-    .obj {
-        font-family: 'Raleway', sans-serif;
-        text-align: center;
-        line-height: 50px;
-        font-size: 20px;
-        color: #6b6f70;
-
-
-    }
-
-    .megaflex {
-        flex-wrap: wrap;
-        margin-top: 0%;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .img {
-        width: 80%;
-        height: 80%;
-        margin-top: 10%;
-    }
-
-    .midright {
-        margin-right: 0%;
-    }
-
-    .desc {
-        font-size: 20px;
-        width: 80%;
-        margin-top: 30px;
-    }
-
-    .list:before {
-        content: "• ";
-    }
-
+  .list:before {
+    content: "• ";
+  }
 }

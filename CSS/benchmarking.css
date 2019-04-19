@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html,
 body,
 div,
@@ -86,12 +85,12 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -106,40 +105,554 @@ hgroup,
 menu,
 nav,
 section {
-    display: block;
+  display: block;
 }
 
 body {
-    line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-    quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: '';
-    content: none;
+  content: '';
+  content: none;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-
 /*-------------------------------------------------------------------------------------------*/
-
 body {
+  background-image: url('Background.png');
+  background-position: center;
+  background-repeat: repeat;
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Raleway', sans-serif;
+  z-index: -20000;
+  background-size: 100% auto;
+}
+
+:root {
+  --mainColor: #bac0c2;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 50px;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-family: 'Raleway', sans-serif;
+  filter: drop-shadow(0px 0px 25px rgba(255, 255, 255, 1));
+  z-index: 50;
+}
+
+a {
+  color: #6b6f70;
+  text-decoration: none;
+}
+
+p {
+  background:
+    linear-gradient(to bottom, var(--mainColor) 0%,
+    var(--mainColor) 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 1px 1px;
+  color: #6b6f70;
+  text-decoration: none;
+  transition: background-size .2s;
+}
+
+p:hover {
+  background-size: 4px 50px;
+}
+
+.left {
+  float: left;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.right {
+  float: right;
+  margin-top: 14%;
+  margin-right: 5%;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 80%;
+  background: white;
+  background-size: 300%;
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.item:first-child>span {
+  margin-right: auto;
+}
+
+.item:last-child>span {
+  margin-left: auto;
+}
+
+.logo {
+  align-content: center;
+  z-index: 20000;
+}
+
+.brands {
+  width: 10%;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .3));
+}
+
+.pods {
+  width: 20%;
+}
+
+.flexbrands {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2%;
+}
+
+.titles {
+  text-align: center;
+  color: black;
+  font-weight: 900;
+  font-size: 25px;
+  margin-top: 6%;
+  text-decoration: underline;
+}
+
+.minititles {
+  font-weight: 600;
+}
+
+.lefttxt {
+  width: 40%;
+  margin-left: 5%;
+  font-size: 20px;
+  text-align: justify;
+  line-height: 120%;
+  font-weight: 500;
+}
+
+.righttxt {
+  width: 40%;
+  margin-right: 5%;
+  float: right;
+  font-size: 20px;
+  text-align: justify;
+  line-height: 120%;
+  font-weight: 500;
+  position: relative;
+  margin-top: 0;
+}
+
+.megaflex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Website {
+  width: 40%;
+  height: 40%;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .3));
+  padding: 5%;
+}
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.app {
+  width: 15%;
+  height: 15%;
+  margin: 5%;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .3));
+}
+
+.rightimage {
+  width: 40%;
+  height: 40%;
+}
+
+.mobileHeader {
+  display: none;
+}
+
+.responsive-menu {
+  display: none;
+}
+
+.slider1 {
+  display: none;
+}
+
+.megaflexrespo {
+  display: none;
+}
+
+.slider2 {
+  display: none;
+}
+
+.phoneimg {
+  display: none;
+}
+
+.hide {
+  display: show;
+}
+
+.devices {
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+
+  /* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+
+  body {
+    line-height: 1;
+  }
+
+  ol,
+  ul {
+    list-style: none;
+  }
+
+  blockquote,
+  q {
+    quotes: none;
+  }
+
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  /*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+  .hamburger {
+    padding: 15px 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+  }
+
+  .hamburger:hover {
+    opacity: 0.7;
+  }
+
+  .hamburger.is-active:hover {
+    opacity: 0.7;
+  }
+
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::before,
+  .hamburger.is-active .hamburger-inner::after {
+    background-color: #000;
+  }
+
+  .hamburger-box {
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+  }
+
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: #000;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+  }
+
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    content: "";
+    display: block;
+  }
+
+  .hamburger-inner::before {
+    top: -10px;
+  }
+
+  .hamburger-inner::after {
+    bottom: -10px;
+  }
+
+  .hamburger--spin .hamburger-inner {
+    transition-duration: 0.22s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  .hamburger--spin .hamburger-inner::before {
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+  }
+
+  .hamburger--spin .hamburger-inner::after {
+    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  .hamburger--spin.is-active .hamburger-inner {
+    transform: rotate(225deg);
+    transition-delay: 0.12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  .hamburger--spin.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+  }
+
+  .hamburger--spin.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  .header {
+    display: none;
+  }
+
+  .mobileHeader {
+    display: flex;
+    background: white;
+    justify-content: space-between;
+  }
+
+  .logoM {
+    width: 30%;
+    transform: translate(85%, 40%);
+  }
+
+  .responsive-menu {
+    background: #E5EBEB;
+    -webkit-box-shadow: 2px 13px 17px -1px rgba(115, 115, 115, 1);
+    -moz-box-shadow: 2px 13px 17px -1px rgba(115, 115, 115, 1);
+    box-shadow: 2px 13px 17px -1px rgba(115, 115, 115, 1);
+  }
+
+  .obj {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    color: #6b6f70;
+  }
+
+  .slider1 {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .flexbrands {
+    display: none;
+  }
+
+  .brands {
+    width: 70%;
+  }
+
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-track .slick-slide {
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  body {
     background-image: url('Background.png');
     background-position: center;
     background-repeat: repeat;
@@ -149,613 +662,69 @@ body {
     font-family: 'Raleway', sans-serif;
     z-index: -20000;
     background-size: 100% auto;
+  }
 
-}
+  .pods {
+    width: 50%;
+    margin-top: 20px;
+  }
 
-:root {
-    --mainColor: #bac0c2;
-}
+  .lefttxt {
+    display: none;
+  }
 
-.header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: 50px;
-    padding-left: 10%;
-    padding-right: 10%;
-    font-family: 'Raleway', sans-serif;
-    filter: drop-shadow(0px 0px 25px rgba(255, 255, 255, 1));
-    z-index: 50;
+  .righttxt {
+    display: none;
+  }
 
+  .megaflexrespo {
+    display: block;
+  }
 
-}
+  .webs {
+    display: none;
+  }
 
-
-a {
-    color: #6b6f70;
-    text-decoration: none;
-
-
-}
-
-
-p {
-    background:
-        linear-gradient(to bottom, var(--mainColor) 0%,
-        var(--mainColor) 100%);
-    background-position: 0 100%;
-    background-repeat: repeat-x;
-    background-size: 1px 1px;
-    color: #6b6f70;
-    text-decoration: none;
-    transition: background-size .2s;
-
-}
-
-p:hover {
-    background-size: 4px 50px;
-}
-
-.left {
-    float: left;
-    margin-top: 5%;
-    margin-left: 5%;
-}
-
-.right {
-    float: right;
-    margin-top: 14%;
-    margin-right: 5%;
-}
-
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 80%;
-    background: white;
-    background-size: 300%;
-}
-
-
-
-.item {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.item:first-child>span {
-    margin-right: auto;
-}
-
-.item:last-child>span {
-    margin-left: auto;
-}
-
-.logo {
-    align-content: center;
-    z-index: 20000;
-}
-
-.brands {
-    width: 10%;
-    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .3));
-}
-
-.pods {
-    width: 20%;
-
-}
-
-.flexbrands {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 2%;
-
-
-}
-
-.titles {
-
+  .movtext {
     text-align: center;
-    color: black;
-    font-weight: 900;
-    font-size: 25px;
-    margin-top: 6%;
-    text-decoration: underline;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 130%;
+  }
 
-}
+  .minititles {
+    text-align: center;
+  }
 
-.minititles {
-    font-weight: 600;
-}
-
-.lefttxt {
-    width: 40%;
-    margin-left: 5%;
-    font-size: 20px;
-    text-align: justify;
-    line-height: 120%;
-    font-weight: 500;
-}
-
-.righttxt {
-    width: 40%;
-    margin-right: 5%;
-    float: right;
-    font-size: 20px;
-    text-align: justify;
-    line-height: 120%;
-    font-weight: 500;
-    position: relative;
-    margin-top: 0;
-}
-
-.megaflex {
+  .devices {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-top: 30px;
     align-items: center;
-}
+  }
 
-.Website {
+  .phoneimg {
     width: 40%;
     height: 40%;
-    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .3));
-    padding: 5%;
-}
-
-.hvr-grow {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-}
-
-.hvr-grow:hover,
-.hvr-grow:focus,
-.hvr-grow:active {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
-}
-
-.app {
-    width: 15%;
-    height: 15%;
-    margin: 5%;
-    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .3));
-}
-
-.rightimage {
-    width: 40%;
-    height: 40%;
-
-
-}
-
-.mobileHeader {
-    display: none;
-}
-
-.responsive-menu {
-    display: none;
-}
-
-.slider1 {
-    display: none;
-}
-
-.megaflexrespo {
-    display: none;
-}
-
-.slider2 {
-    display: none;
-}
-
-.phoneimg {
-    display: none;
-}
-
-.hide {
-    display: show;
-}
-
-.devices{
-    display: none;
-}
-
-
-@media only screen and (max-width: 900px) {
-
-    /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-    html,
-    body,
-    div,
-    span,
-    applet,
-    object,
-    iframe,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    blockquote,
-    pre,
-    a,
-    abbr,
-    acronym,
-    address,
-    big,
-    cite,
-    code,
-    del,
-    dfn,
-    em,
-    img,
-    ins,
-    kbd,
-    q,
-    s,
-    samp,
-    small,
-    strike,
-    strong,
-    sub,
-    sup,
-    tt,
-    var,
-    b,
-    u,
-    i,
-    center,
-    dl,
-    dt,
-    dd,
-    ol,
-    ul,
-    li,
-    fieldset,
-    form,
-    label,
-    legend,
-    table,
-    caption,
-    tbody,
-    tfoot,
-    thead,
-    tr,
-    th,
-    td,
-    article,
-    aside,
-    canvas,
-    details,
-    embed,
-    figure,
-    figcaption,
-    footer,
-    header,
-    hgroup,
-    menu,
-    nav,
-    output,
-    ruby,
-    section,
-    summary,
-    time,
-    mark,
-    audio,
-    video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font: inherit;
-        vertical-align: baseline;
-    }
-
-    /* HTML5 display-role reset for older browsers */
-    article,
-    aside,
-    details,
-    figcaption,
-    figure,
-    footer,
-    header,
-    hgroup,
-    menu,
-    nav,
-    section {
-        display: block;
-    }
-
-    body {
-        line-height: 1;
-    }
-
-    ol,
-    ul {
-        list-style: none;
-    }
-
-    blockquote,
-    q {
-        quotes: none;
-    }
-
-    blockquote:before,
-    blockquote:after,
-    q:before,
-    q:after {
-        content: '';
-        content: none;
-    }
-
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
-
-    /*!
- * Hamburgers
- * @description Tasty CSS-animated hamburgers
- * @author Jonathan Suh @jonsuh
- * @site https://jonsuh.com/hamburgers
- * @link https://github.com/jonsuh/hamburgers
- */
-    .hamburger {
-        padding: 15px 15px;
-        display: inline-block;
-        cursor: pointer;
-        transition-property: opacity, filter;
-        transition-duration: 0.15s;
-        transition-timing-function: linear;
-        font: inherit;
-        color: inherit;
-        text-transform: none;
-        background-color: transparent;
-        border: 0;
-        margin: 0;
-        overflow: visible;
-    }
-
-    .hamburger:hover {
-        opacity: 0.7;
-    }
-
-    .hamburger.is-active:hover {
-        opacity: 0.7;
-    }
-
-    .hamburger.is-active .hamburger-inner,
-    .hamburger.is-active .hamburger-inner::before,
-    .hamburger.is-active .hamburger-inner::after {
-        background-color: #000;
-    }
-
-    .hamburger-box {
-        width: 40px;
-        height: 24px;
-        display: inline-block;
-        position: relative;
-    }
-
-    .hamburger-inner {
-        display: block;
-        top: 50%;
-        margin-top: -2px;
-    }
-
-    .hamburger-inner,
-    .hamburger-inner::before,
-    .hamburger-inner::after {
-        width: 40px;
-        height: 4px;
-        background-color: #000;
-        border-radius: 4px;
-        position: absolute;
-        transition-property: transform;
-        transition-duration: 0.15s;
-        transition-timing-function: ease;
-    }
-
-    .hamburger-inner::before,
-    .hamburger-inner::after {
-        content: "";
-        display: block;
-    }
-
-    .hamburger-inner::before {
-        top: -10px;
-    }
-
-    .hamburger-inner::after {
-        bottom: -10px;
-    }
-
-
-    .hamburger--spin .hamburger-inner {
-        transition-duration: 0.22s;
-        transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
-
-    .hamburger--spin .hamburger-inner::before {
-        transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
-    }
-
-    .hamburger--spin .hamburger-inner::after {
-        transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
-
-    .hamburger--spin.is-active .hamburger-inner {
-        transform: rotate(225deg);
-        transition-delay: 0.12s;
-        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-
-    .hamburger--spin.is-active .hamburger-inner::before {
-        top: 0;
-        opacity: 0;
-        transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
-    }
-
-    .hamburger--spin.is-active .hamburger-inner::after {
-        bottom: 0;
-        transform: rotate(-90deg);
-        transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-
-
-
-    .header {
-
-        display: none;
-    }
-
-    .mobileHeader {
-        display: flex;
-        background: white;
-        justify-content: space-between;
-    }
-
-    .logoM {
-        height: 55px;
-        width: 186px;
-        padding-right: 10px;
-    }
-
-    .responsive-menu {
-        background: #E5EBEB;
-        -webkit-box-shadow: 2px 13px 17px -1px rgba(115, 115, 115, 1);
-        -moz-box-shadow: 2px 13px 17px -1px rgba(115, 115, 115, 1);
-        box-shadow: 2px 13px 17px -1px rgba(115, 115, 115, 1);
-    }
-
-
-    .obj {
-        font-family: 'Raleway', sans-serif;
-        text-align: center;
-        line-height: 50px;
-        font-size: 20px;
-        color: #6b6f70;
-
-
-    }
-
-    .slider1 {
-        display: block;
-        margin-top: 20px;
-    }    
-
-    .flexbrands {
-        display: none;
-    }
-
-    .brands {
-        width: 70%;    
-     
-    }
-    
-    
-    .slick-track {
-        display: flex;
-      }
-      .slick-track .slick-slide {
-        display: flex;
-        height: auto;
-        align-items: center;
-        justify-content: center;
-      }
-
-      body {
-        background-image: url('Background.png');
-        background-position: center;
-        background-repeat: repeat;
-        position: relative;
-        padding: 0px;
-        margin: 0px;
-        font-family: 'Raleway', sans-serif;
-        z-index: -20000;
-        background-size: 100% auto;
-    
-    }
-
-    .pods{
-        width: 50%;
-        margin-top: 20px;
-    }
-
-    .lefttxt {
-        display: none;
-    }
-
-    .righttxt {
-        display: none;
-    }
-
-    .megaflexrespo {
-        display: block;
-    }
-
-    .webs {
-        display: none;
-    }
-
-    .movtext {
-        text-align: center;
-        margin-left: 20px;
-        margin-right: 20px;
-        font-size: 130%;
-    }
-
-    .minititles {
-        text-align: center;
-    }
-  
-    .devices{
-        display: flex;
-        justify-content: space-around;
-        margin-top: 30px;
-        align-items: center;
-    }
-
-    .phoneimg {
-        width: 40%;
-        height: 40%;
-        display: block;
-    }
-
-    .hide {display: none}
-
-    .slider2 {
-        display: block;
-    }
-
-    .leftrespo{
-        width: 50%;
-        height: 50%;
-    }
-
-    .rightrespo{
-        width: 45%;
-        font-size: 100%;
-        text-align: center;
-    }
+    display: block;
+  }
+
+  .hide {
+    display: none
+  }
+
+  .slider2 {
+    display: block;
+  }
+
+  .leftrespo {
+    width: 50%;
+    height: 50%;
+  }
+
+  .rightrespo {
+    width: 45%;
+    font-size: 100%;
+    text-align: center;
+  }
 }

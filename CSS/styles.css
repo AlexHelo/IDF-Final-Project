@@ -8,7 +8,6 @@ body {
   padding: 0px;
   margin: 0px;
   font-family: 'Raleway', sans-serif;
-
 }
 
 :root {
@@ -26,16 +25,12 @@ body {
   font-family: 'Raleway', sans-serif;
   filter: drop-shadow(0px 0px 25px rgba(255, 255, 255, 1));
   z-index: 50;
-
-
 }
-
 
 a {
   color: #6b6f70;
   text-decoration: none;
 }
-
 
 p {
   background:
@@ -47,7 +42,6 @@ p {
   color: #6b6f70;
   text-decoration: none;
   transition: background-size .2s;
-
 }
 
 p:hover {
@@ -98,88 +92,6 @@ p:hover {
   align-content: center;
 }
 
-.carousel {
-  position: relative;
-  height: 848px;
-  width: 400px;
-  margin-left: 25%;
-  transform: translateX(-50%);
-  margin-top: 60px;
-}
-
-.carousel__image {
-  width: 78%;
-  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .3));
-}
-
-.carousel__track-container {
-  height: 630px;
-  width: 370px;
-  position: relative;
-  overflow: hidden;
-}
-
-.carousel__track {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  position: relative;
-  height: 100%;
-  transition: transform 250ms ease-in;
-}
-
-.carousel__slide {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  left: 50px;
-  right: 1000px;
-  padding-left: 30px;
-}
-
-.carousel__button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-}
-
-.carousel__button--left {
-  left: -15px;
-}
-
-.carousel__button img {
-  width: 12px;
-}
-
-.carousel__button--right {
-  right: 35px;
-}
-
-.carousel_nav {
-  display: flex;
-  justify-content: center;
-  padding-top: 1px;
-  padding-bottom: 5px;
-}
-
-.carousel__indicator {
-  border: 0;
-  border-radius: 20%;
-  width: 3px;
-  height: 3px;
-  background: rgb(0, 0, 0, 0.2);
-  margin: 0 3px;
-  padding-left: 5px;
-}
-
-.carousel__indicator.current-slide {
-  background: rgba(0, 0, 0, 0.75)
-}
-
 .mobileHeader {
   display: none;
 }
@@ -188,63 +100,62 @@ p:hover {
   display: none;
 }
 
-
-button{
-  background:#6b6f70;
-  color:#fff;
-  border:none;
-  position:relative;
-  height:90px;
-  font-size:1.6em;
-  padding:0 2em;
-  cursor:pointer;
-  transition:800ms ease all;
-  outline:none;
+button {
+  background: #6b6f70;
+  color: #fff;
+  border: none;
+  position: relative;
+  height: 90px;
+  font-size: 1.6em;
+  padding: 0 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
   margin-top: 100px;
 }
-button:hover{
-  background:#fff;
-  color:#6b6f70;
-}
-button:before,button:after{
-  content:'';
-  position:absolute;
-  top:0;
-  right:0;
-  height:2px;
-  width:0;
-  background: #6b6f70;
-  transition:400ms ease all;
-}
-button:after{
-  right:inherit;
-  top:inherit;
-  left:0;
-  bottom:0;
-}
-button:hover:before,button:hover:after{
-  width:100%;
-  transition:800ms ease all;
+
+button:hover {
+  background: #fff;
+  color: #6b6f70;
 }
 
-.centerbuttons{
+button:before, button:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #6b6f70;
+  transition: 400ms ease all;
+}
+
+button:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+button:hover:before, button:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+}
+
+.centerbuttons {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
   margin-top: 220px;
-  
 }
-
-
 
 @media only screen and (max-width: 900px) {
 
-  /* http://meyerweb.com/eric/tools/css/reset/ 
+  /* http://meyerweb.com/eric/tools/css/reset/
  v2.0 | 20110126
  License: none (public domain)
 */
-
   html,
   body,
   div,
@@ -453,7 +364,6 @@ button:hover:before,button:hover:after{
     bottom: -10px;
   }
 
-
   .hamburger--spin .hamburger-inner {
     transition-duration: 0.22s;
     transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -485,10 +395,7 @@ button:hover:before,button:hover:after{
     transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
-
-
   .header {
-
     display: none;
   }
 
@@ -499,9 +406,8 @@ button:hover:before,button:hover:after{
   }
 
   .logoM {
-    height: 55px;
-    width: 186px;
-    padding-right: 10px;
+    width: 30%;
+    transform: translate(85%, 80%);
   }
 
   .responsive-menu {
@@ -511,63 +417,60 @@ button:hover:before,button:hover:after{
     box-shadow: 2px 13px 17px -1px rgba(115, 115, 115, 1);
   }
 
-
   .obj {
     font-family: 'Raleway', sans-serif;
     text-align: center;
     line-height: 50px;
     font-size: 20px;
     color: #6b6f70;
-
-
   }
-  
-button{
-  background:#6b6f70;
-  color:#fff;
-  border:none;
-  position:relative;
-  height:90px;
-  font-size:1.6em;
-  padding:0 2em;
-  cursor:pointer;
-  transition:800ms ease all;
-  outline:none;
-  margin-top: 100px;
-}
-button:hover{
-  background:#fff;
-  color:#6b6f70;
-}
-button:before,button:after{
-  content:'';
-  position:absolute;
-  top:0;
-  right:0;
-  height:2px;
-  width:0;
-  background: #6b6f70;
-  transition:400ms ease all;
-}
-button:after{
-  right:inherit;
-  top:inherit;
-  left:0;
-  bottom:0;
-}
-button:hover:before,button:hover:after{
-  width:100%;
-  transition:800ms ease all;
-}
 
-.centerbuttons{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 180px;
-  
-}
+  button {
+    background: #6b6f70;
+    color: #fff;
+    border: none;
+    position: relative;
+    height: 90px;
+    font-size: 1.6em;
+    padding: 0 2em;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+  }
 
+  button:hover {
+    background: #fff;
+    color: #6b6f70;
+  }
 
+  button:before, button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #6b6f70;
+    transition: 400ms ease all;
+  }
+
+  button:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+  }
+
+  button:hover:before, button:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+  }
+
+  .centerbuttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 180px;
+  }
 }
