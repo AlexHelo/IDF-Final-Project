@@ -106,15 +106,21 @@ body {
   transform: translateX(53%);
 }
 
-.location button {
+.buttonSetting {
   font-family: sofia-pro, sans-serif;
   font-weight: 400;
+  color: #838383;
   border-color: #838383;
   border-radius: 7px;
   border-width: 0.5px;
   background-color: transparent;
   padding: 7px 11px 7px 11px;
   font-size: 12px;
+}
+
+.selected{
+  color: #5BA8C6;
+  border-color: #5BA8C6;
 }
 
 .labelRoom {
@@ -185,10 +191,6 @@ input:focus {
   margin-top: 140%;
 }
 
-.location button:focus {
-  color: #5BA8C6;
-  border-color: #5BA8C6;
-}
 
 .parentView {
 
@@ -316,7 +318,7 @@ span {
 
 #doneTech {
   position: absolute;
-  transform: translateY(720px);
+  transform: translateY(800px);
   margin-bottom: 30px;
 }
 
@@ -364,7 +366,7 @@ span {
   color: #90949A;
   font-weight: 200;
   text-align: center;
-  transform: translate(43%, 810%);
+  transform: translate(37%, 810%);
 }
 
 .savingAnimationScreen {

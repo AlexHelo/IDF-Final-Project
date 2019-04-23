@@ -123,18 +123,26 @@ body {
   font-size: 20px;
 }
 
+.holder{
+	margin-left: 2%;
+	padding-bottom: 10px;
+}
+
+/*Doesn't display the registered knocki since there isn't*/
 .knockisHolder {
-  margin-left: 6.5%;
-  margin-top: 10%;
+  margin-left: 8%;
+	margin-right: 8%;
+  margin-top: 7%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   position: absolute;
 }
 
 .detailsKnocki {
   width: 40vw;
   height: 190px;
+	    transform: translateX(-4%);
   border-radius: 9px;
   background-image: url(../images/backgroundKnocki.png);
   background-position: -80px -150px;
@@ -144,13 +152,21 @@ body {
 .detailsKnocki{
   font-family: sofia-pro, sans-serif;
   color: white;
+	padding-top: 2%;
   font-size: 17px;
+	line-height: 29px;
+	margin-left: 4%;
+}
+
+.detailsKnocki a {
+	text-decoration: none;
+	color: white;
 }
 
 #knockiTitle{
-  transform: translateY(260%);
+  transform: translateY(140%);
 }
-.detailsp p{
+.detailsp span{
   padding-bottom: 2%;
 }
 
@@ -160,21 +176,17 @@ body {
 }
 
 #add-new-legend h1 {
-  transform: translateY(510%);
-  line-height: 7px;
+  transform: translateY(1700%);
+  line-height: 2px;
 }
 
 .iconAdd img{
-  margin-top: 28%;
+  margin-top: 35%;
   width: 50%;
 }
 
-.myKnockis{
-  /*Change to display none*/
-}
-
 .containerKnocki {
-  transform: translate(7%, 20%);
+  transform: translate(3.5%, 20%);
   width: 350px;
   height: 202px;
   background-image: url(../images/selectedKnocki.png);
@@ -195,17 +207,151 @@ body {
 
 .Location img {
   width: 7%;
-  margin-left: 73%;
+  margin-left: 78%;
   margin-top: 3%;
   position: absolute;
 }
 
-.Location p {
+.Location span {
   font-weight: 200;
   font-size: 20px;
   line-height: 45px;
+	width: 70%;
+}
+
+.detailsContainer {
+	transform: translateY(27%);
+	display: flex;
+	flex-direction: column;
+}
+
+.doneSubmit {
+  position: absolute;
+  margin-top: 10vh;
+  margin-left: 7vw;
+  font-family: sofia-pro, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+  color: white;
+  border-radius: 120px;
+  border-color: transparent;
+  width: 85%;
+  height: 60px;
+  background-color: #5BA8C6;
 }
 
 .editKnocki {
   display: none;
+}
+
+/* edit technology styles*/
+#instructionsTech {
+  margin-top: 6%;
+}
+
+#instructionsTech p{
+	text-align: center;
+}
+
+.techSections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 9.5%;
+  transform: translateX(-4.5%);
+}
+
+.techIcon {
+  width: 50%;
+}
+
+.techButton {
+  width: 40vw;
+  height: 29vh;
+  border-radius: 9px;
+  background-color: #FFFFFF;
+  filter: drop-shadow(-3px 5px 10px #B8B7B5);
+  text-align: center;
+  margin-bottom: 5%;
+  z-index: 1;
+}
+
+.description {
+  position: relative;
+  margin-top: 10%;
+  font-family: sofia-pro, sans-serif;
+  font-size: 12px;
+  color: #585757;
+}
+
+.hdescription {
+  font-weight: 700;
+}
+
+.pdescription {
+  margin-top: 6%;
+}
+
+.editables{
+	display: flex;
+	flex-direction: column;
+}
+
+.editables img{
+	padding-bottom: 10%;
+}
+
+#doneEditable {
+	transform: translateX(80%);
+	width: 10px;
+}
+
+.selected{
+  color: #5BA8C6;
+  border-color: #5BA8C6;
+}
+
+#phoneButton img {
+  transform: translateX(11%);
+}
+
+#tempimg {
+  margin-top: 10px;
+  width: 30%;
+}
+
+#housimg {
+  width: 55%;
+}
+
+#clockimg {
+  width: 65%;
+}
+
+#coffeimg {
+  width: 55%;
+  transform: translateY(-18%);
+}
+
+#musicimg {
+  width: 58%;
+}
+
+#lampimg {
+  width: 58%;
+  transform: translateX(13%);
+}
+
+#textimg {
+  width: 60%;
+  transform: translateY(-6%);
+}
+
+#doneTech {
+  position: absolute;
+	margin-top: 350%;
+  margin-bottom: 30px;
 }

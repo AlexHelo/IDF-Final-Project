@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../webApp/js/store.everything.min.js">
+  </script>
   <script src="../webApp/js/jquery-3.3.1.min.js"></script>
   <link rel="stylesheet" href="../webApp/css/homeStyles.css">
   <title>home</title>
@@ -18,6 +21,7 @@
       </div>
     </div>
   </section>
+
   <section class="hamburger-menu" id="mySidenav">
     <img src="../webApp/images/menuClose.png" alt="close icon" class="closebtn" onclick="closeNav()">
     <div class="menu">
@@ -29,12 +33,13 @@
       </div>
     </div>
   </section>
+
   <section class="myKnockis">
     <div class="title" id="titleMy">
       <h1>MY KNOCKIS</h1>
     </div>
-    <div class="knockisHolder">
-      <button type="button" name="addedKnocki">
+    <div class="knockisHolder" id="registered">
+      <div class="holder">
         <div class="detailsKnocki">
           <h1 id="knockiTitle">Knocki</h1>
           <div class="detailsp">
@@ -42,18 +47,18 @@
             <p id="roomlocation">Room</p>
           </div>
         </div>
-      </button>
+      </div>
       <!--button with registered knocki-->
       <a href="../webApp/main.html">
-      <button type="button" name="addNew">
-        <div class="detailsKnocki" id="add-new-legend">
-          <h1>Add a</h1><br>
-          <h1>new</h1><br>
-          <h1>Knocki</h1>
-          <div class="iconAdd">
-            <img src="../webApp/images/addIcon.png" alt="">
+        <div class="holder">
+          <div class="detailsKnocki" id="add-new-legend">
+            <h1>Add a</h1><br>
+            <h1>new</h1><br>
+            <h1>Knocki</h1>
+            <div class="iconAdd">
+              <img src="../webApp/images/addIcon.png" alt="">
+            </div>
           </div>
-      </button>
       </a>
     </div>
   </section>
@@ -61,22 +66,117 @@
   <section class="editKnocki">
     <section class="knockiVisible">
       <div class="containerKnocki">
-        <img src="../webApp/images/backChevron.png" alt="" id="chevronBack">
+        <img src="../webApp/images/backChevron.png" alt="" class="chevronBack" id="chevronBack">
       </div>
       <div class="infoKnocki">
         <div class="Location">
-          <img src="../webApp/images/editIcon.png" alt="">
-          <p>Location</p>
-          <p>Room</p>
-          <p>Technology selected</p>
+          <div class="editables">
+            <img src="../webApp/images/editIcon.png" alt="" id="editable">
+          </div>
+          <div class="detailsContainer">
+            <span id="locEditable" contenteditable="true">Location
+            </span>
+            <span id="roomEditable" contenteditable="true">Room</span>
+            <span id="techEditable">Technology selected</span>
+          </div>
           <!--Make editable: document.getElementById("myP").contentEditable = "true";-->
         </div>
       </div>
+      <button type="button" name="Done" class="doneSubmit" id="deleteKnocki">Delete Knocki</button>
     </section>
   </section>
 
-
-
+  <!-- Edit tech -->
+  <section class="selectTech" id="selectTech">
+    <div class="instructions" id="instructionsTech">
+      <p>Tap into the technology</p>
+      <p>you want to set.</p>
+    </div>
+    <div class="techSections">
+      <button type="button" name="button" class="techButton" id="lightbulbButton" data-tech="Light Control">
+        <img src="../webApp/images/lightbulbIcon.png" alt="" class="techIcon">
+        <div class="description">
+          <h1 class="hdescription">Light control.</h1>
+          <p class="pdescription">Turn your lights on/off.</p>
+        </div>
+      </button>
+      <!--First (lightbulb) Button ends-->
+      <button type="button" name="button" class="techButton" id="phoneButton" data-tech="Find phone">
+        <img src="../webApp/images/cellphoneIcon.png" alt="" class="techIcon">
+        <div class="description">
+          <h1 class="hdescription">Find your phone.</h1>
+          <p class="pdescription">Make your phone ring.</p>
+        </div>
+      </button>
+      <!--Cellphone button ends-->
+      <button type="button" name="button" class="techButton" id="climateButton" data-tech="Climate control">
+        <img src="../webApp/images/temperatureIcon.png" alt="" class="techIcon" id="tempimg">
+        <div class="description">
+          <h1 class="hdescription">Climate control.</h1>
+          <p class="pdescription">Set the desired temperature.</p>
+        </div>
+      </button>
+      <!--Temperature button ends-->
+      <button type="button" name="button" class="techButton" id="doorButton" data-tech="Surveillance">
+        <img src="../webApp/images/houseIcon.png" alt="" class="techIcon" id="housimg">
+        <div class="description">
+          <h1 class="hdescription">Surveillance.</h1>
+          <p class="pdescription">Know if someone is at the door.</p>
+        </div>
+      </button>
+      <!--Surveillance button ends-->
+      <button type="button" name="button" class="techButton" id="alarmButton" data-tech="Manage alarms">
+        <img src="../webApp/images/clockIcon.png" alt="" class="techIcon" id="clockimg">
+        <div class="description">
+          <h1 class="hdescription">Manage Alarms.</h1>
+          <p class="pdescription">Set and snooze your alarms.</p>
+        </div>
+      </button>
+      <!--Alarms button ends-->
+      <button type="button" name="button" class="techButton" id="coffeeButton" data-tech="Brew coffee">
+        <img src="../webApp/images/coffeMakerIcon.png" alt="" class="techIcon" id="coffeimg">
+        <div class="description">
+          <h1 class="hdescription">Brew Coffee.</h1>
+          <p class="pdescription">Start your coffee machine.</p>
+        </div>
+      </button>
+      <!--Coffee button ends-->
+      <button type="button" name="button" class="techButton" id="alertsButton" data-tech="Manage alerts">
+        <img src="../webApp/images/bellIcon.png" alt="" class="techIcon" id="bellimg">
+        <div class="description">
+          <h1 class="hdescription">Manage Alerts.</h1>
+          <p class="pdescription">Know when your mails and emails arrive.</p>
+        </div>
+      </button>
+      <!--Alerts button ends-->
+      <button type="button" name="button" class="techButton" id="playButton" data-tech="Play music">
+        <img src="../webApp/images/musicIcon.png" alt="" class="techIcon" id="musicimg">
+        <div class="description">
+          <h1 class="hdescription">Play your music.</h1>
+          <p class="pdescription">Skip, play, pause your music.</p>
+        </div>
+      </button>
+      <!--Music button ends-->
+      <button type="button" name="button" class="techButton" id="lampButton" data-tech="Mood control">
+        <img src="../webApp/images/lampIcon.png" alt="" class="techIcon" id="lampimg">
+        <div class="description">
+          <h1 class="hdescription">Mood Control.</h1>
+          <p class="pdescription">Dim the lights and play music.</p>
+        </div>
+      </button>
+      <!--Lamp button ends-->
+      <button type="button" name="button" class="techButton" id="textingButton" data-tech="Texting">
+        <img src="../webApp/images/textingIcon.png" alt="" id="textimg">
+        <div class="description">
+          <h1 class="hdescription">Texting.</h1>
+          <p class="pdescription">Notify when leaving or arriving.</p>
+        </div>
+      </button>
+      <!--TExting button ends-->
+    </div>
+    <button type="button" name="Done" class="doneSubmit" id="doneTech">Done</button>
+  </section>
+  <!--end of screen to edit technology-->
   <script type="text/javascript">
     function openNav() {
       document.getElementById("mySidenav").style.width = "80vw";
@@ -86,6 +186,119 @@
       document.getElementById("mySidenav").style.width = "0vw";
     }
 
+    $('.selectTech').hide();
+
+    displayKnockis();
+    // Display the knockis
+    function displayKnockis() {
+      // Empty container
+      $('#registered').empty();
+
+      // Loop thorugh all Knockis and add the ones from the logged in user
+      for (var i = 1; i <= store.get('tot-knockis'); i++) {
+        var s = store.get('knocki-' + i);
+        // Check ownership
+        if (s.user == store.get('logged-in-user')) {
+          $('#registered').append(
+            `
+            <div class="holder" id="registered" data-id='knocki-${i}'>
+              <div class="detailsKnocki">
+                <h1 id="knockiTitle">Knocki</h1>
+                <div class="detailsp">
+                  <p id="knockilocation"> ${s.location} </p>
+                  <p id="roomlocation">${s.room}</p>
+                </div>
+              </div>
+            </div>
+            `
+          );
+        }
+      }
+
+      // At the very end add the `Add new knocki button at the bottom.
+      $('#registered').append(
+        `
+      <a href="../webApp/main.html">
+      <div class="detailsKnocki" id="add-new-legend">
+        <h1>Add a</h1><br>
+        <h1>new</h1><br>
+        <h1>Knocki</h1>
+        <div class="iconAdd">
+          <img src="../webApp/images/addIcon.png" alt="">
+      </div>
+      </a>
+      `
+      );
+    }
+
+    var current_knocki = "";
+
+    // Add dynamic event listener to knocki
+    $('body').on('click', '.holder', function() {
+      var k = store.get($(this).data('id'));
+      console.log(k);
+
+      $('#locEditable').html(k.location);
+      $('#roomEditable').html(k.room);
+      $('#techEditable').html(k.tech);
+
+      $('.myKnockis').hide();
+      $('.editKnocki').show();
+
+      $('.selectTech').hide();
+      $('.savingAnimationScreen').show();
+
+      // read knocki details and fill page
+      current_knocki = $(this).data('id');
+      store.set('current_knocki', current_knocki);
+    });
+
+    // Hide edit screen and show select tech screen
+    $('#techEditable').on('click', function() {
+      $('.editKnocki').hide();
+      // Before proceeding to the selection of technology. Update the fields in the `.current_knocki`.
+      store.update(current_knocki, function(current_knocki) {
+        current_knocki.location = $('#locEditable').html();
+        current_knocki.room = $('#roomEditable').html();
+      });
+      $('.selectTech').show();
+    });
+
+    $('.containerKnocki').on('click', function() {
+      $('.editKnocki').hide();
+      // Before proceeding to the selection of technology. Update the fields in the `.current_knocki`.
+      store.update(current_knocki, function(current_knocki) {
+        current_knocki.location = $('#locEditable').html();
+        current_knocki.room = $('#roomEditable').html();
+      });
+      displayKnockis();
+      $('.myKnockis').show();
+    });
+
+    // give feedback to user when selected and save preference
+
+    $('.techButton').on('click', function() {
+      $('.techButton').css('background-color', 'white');
+      // Toggle ONLY the selected `key-n` to active
+      $(this).css('background-color', '#DEEBF0');
+      // Save the selected tech by the user
+      var selectedButton = $(this).data('tech');
+      selTech = selectedButton;
+      // Updates the selected Tech
+      store.update(current_knocki, function(current_knocki) {
+        current_knocki.tech = selTech;
+      });
+      $('#techEditable').html(selTech);
+    });
+
+    // Goes back to the editing menu
+    $('#doneTech').on('click', function() {
+      $('.editKnocki').show();
+      $('.selectTech').hide();
+    });
+
+
+    displayKnockis();
   </script>
 </body>
 

@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="../webApp/js/jquery-3.3.1.min.js"></script>
+  <script src="../webApp/js/store.everything.min.js">
+  </script>
   <link rel="stylesheet" href="../webApp/css/styleMain.css">
   <title>main</title>
 </head>
@@ -14,13 +16,13 @@
   <section class="navBar">
     <div class="header">
       <div class="nav-bar">
-        <img src="../webApp/images/menu@2x.png" alt="ham menu" class="hamMenu" onclick = "openNav()">
+        <img src="../webApp/images/menu@2x.png" alt="ham menu" class="hamMenu" onclick="openNav()">
         <img src="../webApp/images/knockiLogoBlue.png" alt="logo" id="logo-nav">
       </div>
     </div>
   </section>
   <section class="hamburger-menu" id="mySidenav">
-    <img src="../webApp/images/menuClose.png" alt="close icon" class="closebtn" onclick = "closeNav()">
+    <img src="../webApp/images/menuClose.png" alt="close icon" class="closebtn" onclick="closeNav()">
     <div class="menu">
       <div class="menu-items">
         <a href="../webApp/home.html">Home</a>
@@ -40,9 +42,9 @@
       <div class="location">
         <img src="../webApp/images/Locicon.png" alt="" class="settingsicon">
         <div class="buttonsLoc">
-          <button type="button" name="Home" class="buttonSetting" id="homeB"> Home</button>
-          <button type="button" name="Business" class="buttonSetting" id="businessB">Business</button>
-          <button type="button" name="Other" class="otherSetting" id="otherB">Other</button>
+          <button type="button" name="Home" class="buttonSetting" data-l="Home"> Home</button>
+          <button type="button" name="Business" class="buttonSetting" data-l="Business">Business</button>
+          <button type="button" name="Other" class="buttonSetting" data-l="Other">Other</button>
         </div>
       </div>
       <!--Room section in settings-->
@@ -81,13 +83,13 @@
     </div>
   </section>
   <!--Connect screen ends and starts selection of technology-->
-  <section class="selectTech">
+  <section class="selectTech" id="selectTech">
     <div class="instructions" id="instructionsTech">
       <p>Tap into the technology</p>
       <p>you want to set.</p>
     </div>
     <div class="techSections">
-      <button type="button" name="button" class="techButton" id="lightbulbButton">
+      <button type="button" name="button" class="techButton" id="lightbulbButton" data-tech="Light Control">
         <img src="../webApp/images/lightbulbIcon.png" alt="" class="techIcon">
         <div class="description">
           <h1 class="hdescription">Light control.</h1>
@@ -95,7 +97,7 @@
         </div>
       </button>
       <!--First (lightbulb) Button ends-->
-      <button type="button" name="button" class="techButton" id="phoneButton">
+      <button type="button" name="button" class="techButton" id="phoneButton" data-tech="Find phone">
         <img src="../webApp/images/cellphoneIcon.png" alt="" class="techIcon">
         <div class="description">
           <h1 class="hdescription">Find your phone.</h1>
@@ -103,7 +105,7 @@
         </div>
       </button>
       <!--Cellphone button ends-->
-      <button type="button" name="button" class="techButton" id="climateButton">
+      <button type="button" name="button" class="techButton" id="climateButton" data-tech="Climate control">
         <img src="../webApp/images/temperatureIcon.png" alt="" class="techIcon" id="tempimg">
         <div class="description">
           <h1 class="hdescription">Climate control.</h1>
@@ -111,7 +113,7 @@
         </div>
       </button>
       <!--Temperature button ends-->
-      <button type="button" name="button" class="techButton" id="doorButton">
+      <button type="button" name="button" class="techButton" id="doorButton" data-tech="Surveillance">
         <img src="../webApp/images/houseIcon.png" alt="" class="techIcon" id="housimg">
         <div class="description">
           <h1 class="hdescription">Surveillance.</h1>
@@ -119,7 +121,7 @@
         </div>
       </button>
       <!--Surveillance button ends-->
-      <button type="button" name="button" class="techButton" id="alarmButton">
+      <button type="button" name="button" class="techButton" id="alarmButton" data-tech="Manage alarms">
         <img src="../webApp/images/clockIcon.png" alt="" class="techIcon" id="clockimg">
         <div class="description">
           <h1 class="hdescription">Manage Alarms.</h1>
@@ -127,7 +129,7 @@
         </div>
       </button>
       <!--Alarms button ends-->
-      <button type="button" name="button" class="techButton" id="coffeeButton">
+      <button type="button" name="button" class="techButton" id="coffeeButton" data-tech="Brew coffee">
         <img src="../webApp/images/coffeMakerIcon.png" alt="" class="techIcon" id="coffeimg">
         <div class="description">
           <h1 class="hdescription">Brew Coffee.</h1>
@@ -135,7 +137,7 @@
         </div>
       </button>
       <!--Coffee button ends-->
-      <button type="button" name="button" class="techButton" id="alertsButton">
+      <button type="button" name="button" class="techButton" id="alertsButton" data-tech="Manage alerts">
         <img src="../webApp/images/bellIcon.png" alt="" class="techIcon" id="bellimg">
         <div class="description">
           <h1 class="hdescription">Manage Alerts.</h1>
@@ -143,7 +145,7 @@
         </div>
       </button>
       <!--Alerts button ends-->
-      <button type="button" name="button" class="techButton" id="playButton">
+      <button type="button" name="button" class="techButton" id="playButton" data-tech="Play music">
         <img src="../webApp/images/musicIcon.png" alt="" class="techIcon" id="musicimg">
         <div class="description">
           <h1 class="hdescription">Play your music.</h1>
@@ -151,7 +153,7 @@
         </div>
       </button>
       <!--Music button ends-->
-      <button type="button" name="button" class="techButton" id="lampButton">
+      <button type="button" name="button" class="techButton" id="lampButton" data-tech="Mood control">
         <img src="../webApp/images/lampIcon.png" alt="" class="techIcon" id="lampimg">
         <div class="description">
           <h1 class="hdescription">Mood Control.</h1>
@@ -159,7 +161,7 @@
         </div>
       </button>
       <!--Lamp button ends-->
-      <button type="button" name="button" class="techButton" id="textingButton">
+      <button type="button" name="button" class="techButton" id="textingButton" data-tech="Texting">
         <img src="../webApp/images/textingIcon.png" alt="" id="textimg">
         <div class="description">
           <h1 class="hdescription">Texting.</h1>
@@ -197,6 +199,9 @@
 
   <!--Script sections-->
   <script type="text/javascript">
+    var locUser = 'Home'; // global variable
+    var selTech = 'Default'; // global variable
+
     function openNav() {
       document.getElementById("mySidenav").style.width = "80vw";
     }
@@ -205,7 +210,7 @@
       document.getElementById("mySidenav").style.width = "0vw";
     }
 
-    $('#doneSettings').on('click', function(){
+    $('#doneSettings').on('click', function() {
       $('.selectTech').show();
       $('.parentView').hide();
     });
@@ -213,15 +218,49 @@
     $('.techButton').on('click', function() {
       // Before updating the UI, toggle every `.key-n` to disabled.
       $('.techButton').css('background-color', 'white');
-
       // Toggle ONLY the selected `key-n` to active
       $(this).css('background-color', '#DEEBF0');
+      // Save the selected tech by the user
+      var selectedButton = $(this).data('tech');
+      selTech = selectedButton;
+      console.log(selTech);
     });
 
-    $('#doneTech').on('click', function(){
+    $('.buttonSetting').on('click', function() {
+      // Feedback to the user when selection
+      $('.buttonSetting').removeClass('selected');
+      $(this).addClass('selected');
+      // Save the selected location by the user
+      var selectedPlaces = $(this).data('l');
+      locUser = selectedPlaces;
+    });
+
+
+    //Check for 'tot-knockis'
+    if (store.get('tot-knockis') == null) {
+      store.set('tot-knockis', 0);
+    }
+
+    //add new knocki
+    $('#doneTech').on('click', function() {
+      // TODO: validate that the location isn't empty
+      // increment knockis
+      store.set('tot-knockis', store.get('tot-knockis') + 1);
+
+      // add new knocki
+      store.set('knocki-' + store.get('tot-knockis'), {
+        user: store.get('logged-in-user'),
+        location: locUser,
+        room: $('#placeRoom').val(),
+        surface: $('#surfaceInput').val(),
+        tech: selTech,
+        enabled: true
+      });
       $('.selectTech').hide();
       $('.savingAnimationScreen').show();
     });
+
+    // Display knockis in home
 
   </script>
 </body>

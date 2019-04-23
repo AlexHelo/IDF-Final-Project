@@ -96,7 +96,7 @@
   input {
     font-family: sofia-pro, sans-serif;
     font-size: 40px;
-    width: 600px;
+    width: 640px;
     padding: 15px;
     margin: 20px 0 50px 0;
     border-width: 0px 0em 1px 0;
@@ -113,6 +113,18 @@
     -webkit-tap-highlight-color: transparent;
   }
 
+  #errorLogIn{
+    display: none;
+    color: red;
+    width: 65vw;
+    text-align: center;
+    font-size: 40px;
+    line-height: 45px;
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 18%;
+  }
+
   .submitForm {
     margin-left: 30%;
     margin-top: 30%;
@@ -127,8 +139,8 @@
   }
 
   .loginbutton {
-    margin-left: 55%;
-    margin-top: 30px;
+    margin-left: 56%;
+    margin-top: 90px;
   }
 
   .AccountScreen {

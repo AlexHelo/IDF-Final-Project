@@ -4,6 +4,10 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <script src="../webApp/js/jquery-3.3.1.min.js"></script>
+  <script src="../webApp/js/store.everything.min.js">
+  </script>
+  <script src="../webApp/js/jquery.animate-colors-min.js">
+  </script>
   <link rel="stylesheet" href="../webApp/css/style.css">
   <link href="../webApp/css/styles.css" rel="stylesheet">
   <meta charset="utf-8">
@@ -66,17 +70,17 @@
     </div>
     <div class="signupForm">
       <label for="name"><b>NAME</b></label>
-      <input type="text" placeholder="John Doe" name="name" required>
+      <input type="text" placeholder="John Doe" id="create-name" name="name" required id="inputT">
       <label for="email"><b>EMAIL</b></label>
-      <input type="text" placeholder="Email" name="email" required>
+      <input type="text" placeholder="Email" id="create-email" name="email" required id="inputT">
       <label for="psw"><b>PASSWORD</b></label>
-      <input type="password" placeholder="Password" name="psw" required>
+      <input type="password" placeholder="Password" id="create-password" name="psw" required id="inputT">
     </div>
     <div class="submitForm">
       <button type="button" name="CreateAccount" class="signUp" id="create">Create Account</button>
     </div>
     <div class="loginbutton">
-      <button type="button" name="logInbutton" class="login-button" id="lo">Log in</button>
+      <span type="button" name="logInbutton" class="login-button" id="lo">Log in</span>
     </div>
   </section>
   <!-- Account Screen end-->
@@ -93,12 +97,7 @@
     </div>
     <div class="nextSteps">
       <div class="AddKnocki">
-        <a href="../webApp/main.html">
-        <button type="button" name="addnew" class="signUp">Add new Knocki</button>
-        </a>
-      </div>
-      <div class="SkipToMm">
-        <button type="button" name="skipto" class="login-button">Skip to main menu</button>
+        <button type="button" name="addnew" class="signUp" id="retLogin">Start using Knocki</button>
       </div>
     </div>
   </section>
@@ -116,15 +115,18 @@
     </div>
     <div class="signinForm">
       <label for="email"><b>EMAIL</b></label>
-      <input type="text" placeholder="Email" name="email" required>
-      <label for="psw"><b>PASSWORD</b></label>
-      <input type="password" placeholder="Password" name="psw" required>
+      <input type="text" placeholder="Email" name="email" required id="email" onFocus="inputFocus();">
+      <label for="psw1"><b>PASSWORD</b></label>
+      <input type="password" placeholder="Password" name="psw1" required id="psw" onFocus="inputFocus();">
     </div>
+    <span id="errorLogIn">
+      <h3>Something seems wrong with your login details, mind trying again?</h3>
+    </span>
     <div class="formLogin">
-      <a href="../webApp/home.html"><button type="button" name="Login" class="signUp">Log in</button></a>
+    <button type="button" name="Login" class="signUp" id="logInval">Log in</button>
     </div>
     <div class="signupOption">
-      <button type="button" name="SignUp" class="login-button" id="sign">Sign Up</button>
+      <span type="button" name="SignUp" class="login-button" id="sign">Sign Up</span>
     </div>
 
   </section>
@@ -133,46 +135,105 @@
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src="js/index.js"></script>
   <script type="text/javascript">
+  function inputFocus(){
+    $('input').css("border-color","#707070");
+  };
+    window.localStorage.setItem('logged-in-user', null);
     // Sign Up gets you to GetStarted screen
-    $('#signUp-button').on('click', function(){
+    $('#signUp-button').on('click', function() {
       $('.GetStarted').show();
       $('.firstScreen').hide();
     });
     // Log in gets you to log in screen
-    $('#login-button').on('click', function(){
+    $('#login-button').on('click', function() {
       $('.Login-screen').show();
       $('.firstScreen').hide();
     });
 
     // get Started button gets you to create screen account
-    $('#get-Started').on('click', function(){
+    $('#get-Started').on('click', function() {
       $('.AccountScreen').show();
       $('.GetStarted').hide();
       $('.Login-screen').hide();
     });
 
     // Shows the log in screen when selected button in the AccountScreen screen
-
-    $('#lo').on('click', function(){
+    $('#lo').on('click', function() {
       $('.Login-screen').show();
       $('.AccountScreen').hide();
       $('.GetStarted').hide();
     });
 
     //
-
-    $('#sign').on('click', function(){
+    $('#sign').on('click', function() {
       $('.Login-screen').hide();
       $('.AccountScreen').show();
       $('.GetStarted').hide();
     });
 
-    $('#create').on('click', function(){
+    //check if tot-users exists
+    if (store.get('tot-usr') == null) {
+      store.set('tot-usr', 0);
+    }
+
+    //Creating account section
+    $('#create').on('click', function() {
+
+
+      //TODO validate
+
+      /*
+      no empty fields
+      passwords match
+      user
+
+      */
+
+      //steigen tot-usr
+      store.set('tot-usr', store.get('tot-usr') + 1);
+
+      // Create new user
+      store.set('user-' + store.get('tot-usr'), {
+        name: $('#create-name').val(),
+        email: $('#create-email').val(),
+        password: $('#create-password').val(),
+      });
+
+      //change screen to all set
       $('.AccountScreen').hide();
       $('.Login-screen').hide();
       $('.AllSet').show();
       $('.GetStarted').hide();
+      // change screen to all set
     });
+
+
+    // User registration und returning to login screen
+    $('#retLogin').on('click', function() {
+      $('.Login-screen').show();
+      $('.AccountScreen').hide();
+      $('.GetStarted').hide();
+      $('.AllSet').hide();
+    });
+
+    //login screen and login button actions
+    $('#logInval').on('click', function() {
+      //loop through users
+      for (var i = 1; i <= store.get('tot-usr'); i++) {
+        var u = store.get('user-'+i);
+        if (u.email == $('#email').val()
+        && u.password == $('#psw').val()){
+          //match
+          store.set('logged-in-user', u.email);
+          //go to main.html
+          window.location.href = 'home.html';
+        }
+      }
+      $("input").css("border-color","red");
+      $('#errorLogIn').fadeIn();
+      $('#errorLogIn').fadeOut(5000);
+    });
+
   </script>
 </body>
 
