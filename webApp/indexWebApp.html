@@ -138,6 +138,7 @@
   function inputFocus(){
     $('input').css("border-color","#707070");
   };
+
     window.localStorage.setItem('logged-in-user', null);
     // Sign Up gets you to GetStarted screen
     $('#signUp-button').on('click', function() {
@@ -177,20 +178,16 @@
     }
 
     //Creating account section
-    $('#create').on('click', function() {
+    $('.signUp').on('click', function() {
 
 
-      //TODO validate
+      //TODO validate no same user
 
-      /*
-      no empty fields
-      passwords match
-      user
 
-      */
+
 
       //steigen tot-usr
-      store.set('tot-usr', store.get('tot-usr') + 1);
+      store.set('tot-usr', (store.get('tot-usr') + 1));
 
       // Create new user
       store.set('user-' + store.get('tot-usr'), {
@@ -225,8 +222,14 @@
         && u.password == $('#psw').val()){
           //match
           store.set('logged-in-user', u.email);
+          store.set('logged-in-name', u.name);
+          store.set('logged-in-pass', u.password);
           //go to main.html
           window.location.href = 'home.html';
+          $('.Login-screen').hide();
+          $('.AccountScreen').hide();
+          $('.GetStarted').hide();
+          $('.AllSet').hide();
         }
       }
       $("input").css("border-color","red");

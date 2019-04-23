@@ -30,7 +30,7 @@ body {
   font-size: 22px;
   font-weight: 800;
   text-align: center;
-	padding-top: 50px;
+	padding-top: 10px;
 	padding-bottom: 60px;
   transition: 0.3s;
 }
@@ -101,9 +101,23 @@ body {
   padding-top: 10px;
 }
 
-/*Second screen*/
-/* TODO: Improve borders around it */
-/* Sub-section holding the buttons */
+.doneSubmit {
+  position: absolute;
+  margin-top: 40vh;
+  margin-left: 24vw;
+  font-family: sofia-pro, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 15px;
+  color: white;
+  border-radius: 120px;
+  border-color: transparent;
+  width: 203px;
+  height: 60px;
+  background-color: #CD5C5C;
+  text-decoration: none;
+}
+
 
 .SecondScreen{
   width: 100vw;
@@ -229,4 +243,30 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.editProfileButton {
+  width: 10%;
+  height: 5%;
+  position: absolute;
+  right: 5%;
+  top: 15%;
+  z-index: 1000;
+}
+
+.doneEditing {
+  position: absolute;
+  bottom: 30%;
+  font-family: sofia-pro, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+  color: white;
+  border-radius: 120px;
+  border-color: transparent;
+  width: 50%;
+  left: 25%;
+  right: 25%;
+  height: 60px;
+  background-color: #5BA8C6;
 }

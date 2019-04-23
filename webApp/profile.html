@@ -36,23 +36,94 @@
   <!--Section 1 /screen 1-->
   <section class="Profile">
     <div class="accountForm">
-      <label for="name"><b>Name</b></label>
-      <p>John Doe</p>
+      <label class="name" for="name"><b>Name</b></label>
+      <p contenteditable="true" id="textFieldName"></p>
       <label for="email"><b>Email</b></label>
-      <p>loremipsum@dolor.sit</p>
+      <p contenteditable="true" id="textFieldEmail"></p>
       <label for="psw"><b>Password</b></label>
-      <p>············</p>
+      <p contenteditable="true" id="textFieldPassword" type="password"> ············ </p>
     </div>
+    <a href="../webApp/indexWebApp.html">
+      <button type="button" name="Log out" class="doneSubmit" id="logOut">Log Out</button>
+    </a>
+    <div class = "editButtonHolder" onclick = "modifyProfile()">
+    <img class = "editProfileButton" src="../webApp/images/editIcon.png" alt="" id="editable">
+  </div>
   </section>
+
+  <button type="button" name="Done" class="doneEditing" id="doneEditingButton" onclick="saveProfile()">Save Profile</button>
+
   <script type="text/javascript">
+
+    $('#textFieldName').html(store.get('logged-in-name'));
+    $('#textFieldEmail').html(store.get('logged-in-user'));
+
+
+    document.getElementById("textFieldName").contentEditable = false;
+    document.getElementById("textFieldEmail").contentEditable = false;
+    document.getElementById("textFieldPassword").contentEditable = false;
+
+    var pastEmail = store.get('logged-in-user');
+    var isEditing = false;
+
     function openNav() {
       document.getElementById("mySidenav").style.width = "80vw";
     }
 
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0vw";
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0vw";
+  }
+
+  function modifyProfile() {
+    // Modify the state.
+    isEditing = !isEditing
+
+    // Modify the UI accordingly.
+    if (isEditing) {
+      $(".doneEditing").css("display", "block");
+      document.getElementById("textFieldName").contentEditable = true;
+      document.getElementById("textFieldEmail").contentEditable = true;
+      document.getElementById("textFieldPassword").contentEditable = true;
+    } else {
+      $(".doneEditing").css("display", "none");
+      document.getElementById("textFieldName").contentEditable = false;
+      document.getElementById("textFieldEmail").contentEditable = false;
+      document.getElementById("textFieldPassword").contentEditable = false;
+    }
+  }
+
+  function saveProfile() {
+    modifyProfile();
+    // Get user position in array.
+    var savedPosition = 0;
+    for (var i = 1; i <= store.get('tot-usr'); i++) {
+      var u = store.get('user-'+i);
+      if (u.email == pastEmail) {
+        savedPosition = 1;
+      }
     }
 
+    // Get the new fields.
+    var newName = document.getElementById("textFieldName").textContent
+    var newEmail = document.getElementById("textFieldEmail").textContent;
+    var newPassword =  document.getElementById("textFieldPassword").textContent;
+
+    var user = store.get('user-'+savedPosition);
+    user.name = newName;
+    user.email = newEmail;
+    user.password = newPassword;
+
+    store.set('user-'+savedPosition, user);
+
+           // Set the loggedIn user.
+           store.set('logged-in-user', document.getElementById("textFieldEmail").textContent);
+    store.set('logged-in-name', document.getElementById("textFieldName").textContent);
+    store.set('logged-in-password', document.getElementById("textFieldPassword").textContent);
+
+    // Update the fields.
+    $('#textFieldName').html(store.get('logged-in-name'));
+    $('#textFieldEmail').html(store.get('logged-in-user'));
+  }
   </script>
 </body>
 
