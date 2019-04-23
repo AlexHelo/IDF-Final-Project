@@ -26,17 +26,18 @@ body {
 }
 
 .menu-items a {
+	text-decoration: none;
   font-size: 22px;
   font-weight: 800;
   text-align: center;
-  text-decoration: none;
-  padding-top: 80px;
+	padding-top: 50px;
+	padding-bottom: 60px;
   transition: 0.3s;
 }
 
 .menu-items a:visited {
-  text-decoration: inherit;
-  color: inherit;
+  text-decoration: none;
+  color: 	#696969;
 }
 
 .closebtn {
@@ -46,7 +47,6 @@ body {
 }
 
 .header {
-  position: absolute;
   width: 100vw;
   height: 70px;
 }
@@ -66,9 +66,9 @@ body {
 }
 
 #logo-nav {
-  width: 28%;
+  width: 25%;
   transform: translateY(70%);
-  margin-left: 23%;
+  margin-left: 25%;
 }
 
 .title {
@@ -191,10 +191,6 @@ input:focus {
   margin-top: 140%;
 }
 
-
-.parentView {
-
-}
 
 /* First screen/section ends*/
 /* Second screen/section begins*/

@@ -71,17 +71,18 @@ body {
 }
 
 .menu-items a {
+	text-decoration: none;
   font-size: 22px;
   font-weight: 800;
   text-align: center;
-  text-decoration: none;
-  padding-top: 80px;
+	padding-top: 50px;
+	padding-bottom: 60px;
   transition: 0.3s;
 }
 
 .menu-items a:visited {
-  text-decoration: inherit;
-  color: inherit;
+  text-decoration: none;
+  color: 	#696969;
 }
 
 .closebtn {
@@ -186,7 +187,8 @@ body {
 }
 
 .containerKnocki {
-  transform: translate(3.5%, 20%);
+  margin-left: 3%;
+	margin-top: 10%;
   width: 350px;
   height: 202px;
   background-image: url(../images/selectedKnocki.png);
@@ -295,15 +297,6 @@ body {
   margin-top: 6%;
 }
 
-.editables{
-	display: flex;
-	flex-direction: column;
-}
-
-.editables img{
-	padding-bottom: 10%;
-}
-
 #doneEditable {
 	transform: translateX(80%);
 	width: 10px;
@@ -354,4 +347,9 @@ body {
   position: absolute;
 	margin-top: 350%;
   margin-bottom: 30px;
+}
+
+#deleteKnocki {
+	transform: translateY(130%);
+	background-color: 	#CD5C5C;
 }

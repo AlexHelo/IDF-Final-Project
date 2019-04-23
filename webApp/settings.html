@@ -14,28 +14,27 @@
 
 <body>
   <!--Section screen 2-->
-  <section class="SecondScreen">
-    <section class="navBar">
-      <div class="header">
-        <div class="nav-bar">
-          <img src="../webApp/images/menu@2x.png" alt="ham menu" class="hamMenu" onclick="openNav()">
-          <h1 class="navigationBarTitle">
-          <span id="settings">Settings</span>
-        </h1>
-        </div>
+  <section class="navBar">
+    <div class="header">
+      <div class="nav-bar">
+        <img src="../webApp/images/menu@2x.png" alt="ham menu" class="hamMenu" onclick="openNav()">
+        <img src="../webApp/images/knockiLogoBlue.png" alt="logo" id="logo-nav">
       </div>
-    </section>
-    <section class="hamburger-menu" id="mySidenav">
-      <img src="../webApp/images/menuClose.png" alt="close icon" class="closebtn" onclick = "closeNav()">
-      <div class="menu">
-        <div class="menu-items">
-          <a href="../webApp/home.html">Home</a>
-          <a href="../webApp/profile.html">Profile</a>
-          <a href="https://twitter.com/knocki?lang=en" target="_blank">Support</a>
-          <a href="../webApp/settings.html">Settings</a>
-        </div>
+    </div>
+  </section>
+
+  <section class="hamburger-menu" id="mySidenav">
+    <img src="../webApp/images/menuClose.png" alt="close icon" class="closebtn" onclick="closeNav()">
+    <div class="menu">
+      <div class="menu-items">
+        <a href="../webApp/home.html">Home</a>
+        <a href="../webApp/profile.html">Profile</a>
+        <a href="https://twitter.com/knocki?lang=en" target="_blank">Support</a>
+        <a href="../webApp/settings.html">Settings</a>
       </div>
-    </section>
+    </div>
+  </section>
+  
     <section class="settingsSection">
       <div class="preferencesRow">
         <h1 class="preferencesHeader">Preferences</h1>
@@ -65,13 +64,13 @@
     </section>
   </section>
   <script type="text/javascript">
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "80vw";
-    }
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "80vw";
+  }
 
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0vw";
-    }
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0vw";
+  }
 
   </script>
 </body>

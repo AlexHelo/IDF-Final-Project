@@ -82,6 +82,7 @@
           <!--Make editable: document.getElementById("myP").contentEditable = "true";-->
         </div>
       </div>
+      <button type="button" name="Done" class="doneSubmit" id="saveKnocki">Save changes</button>
       <button type="button" name="Done" class="doneSubmit" id="deleteKnocki">Delete Knocki</button>
     </section>
   </section>
@@ -198,7 +199,7 @@
       for (var i = 1; i <= store.get('tot-knockis'); i++) {
         var s = store.get('knocki-' + i);
         // Check ownership
-        if (s.user == store.get('logged-in-user')) {
+        if (s.user == store.get('logged-in-user') && s.enabled) {
           $('#registered').append(
             `
             <div class="holder" id="registered" data-id='knocki-${i}'>
@@ -294,7 +295,21 @@
     // Goes back to the editing menu
     $('#doneTech').on('click', function() {
       $('.editKnocki').show();
-      $('.selectTech').hide();
+      $('.myKnockis').hide();
+    });
+
+    // Deletes the Knocki
+    $('#deleteKnocki').on('click', function() {
+      if (confirm("Are you sure you want to delete this Knocki?")) {
+        store.update(current_knocki, function(current_knocki) {
+          current_knocki.enabled = false;
+        });
+        displayKnockis();
+        $('.editKnocki').hide();
+        $('.myKnockis').show();
+      } else {
+
+      }
     });
 
 

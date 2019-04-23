@@ -210,9 +210,23 @@
       document.getElementById("mySidenav").style.width = "0vw";
     }
 
+    function returnToNormal() {
+      $("input").css("box-shadow", "0 4px 2px -2px #B8B7B5");
+    }
+
     $('#doneSettings').on('click', function() {
-      $('.selectTech').show();
-      $('.parentView').hide();
+      // Before creating the knockis we must make sure that the fields aren't empty.
+
+      var roomNotEmpty = $('#placeRoom').val().length != 0
+      var surfaceNotEmpty = $('#surfaceInput').val().length != 0
+      if (roomNotEmpty && surfaceNotEmpty) {
+        $('.selectTech').show();
+        $('.parentView').hide();
+      } else {
+        $("input").css("box-shadow", "0 4px 2px -2px #DC143C");
+        // We need to return the fields to normal, that is why we use the `.returnToNormal` function
+        window.setInterval(returnToNormal, 2000);
+      }
     });
 
     $('.techButton').on('click', function() {
@@ -261,7 +275,6 @@
     });
 
     // Display knockis in home
-
   </script>
 </body>
 

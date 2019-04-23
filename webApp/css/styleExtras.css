@@ -3,7 +3,6 @@
 body {
   font-family: sofia-pro, sans-serif;
   font-style: normal;
-  width: 100%;
 }
 
 .hamburger-menu {
@@ -27,17 +26,18 @@ body {
 }
 
 .menu-items a {
+	text-decoration: none;
   font-size: 22px;
   font-weight: 800;
   text-align: center;
-  text-decoration: none;
-  padding-top: 80px;
+	padding-top: 50px;
+	padding-bottom: 60px;
   transition: 0.3s;
 }
 
 .menu-items a:visited {
-  text-decoration: inherit;
-  color: inherit;
+  text-decoration: none;
+  color: 	#696969;
 }
 
 .closebtn {
@@ -60,11 +60,16 @@ body {
 .hamMenu {
   position: relative;
   padding-left: 6%;
-  transform: translateY(70%);
-  width: 6%;
-  top: 20px;
+  margin-top: 4%;
+  width: 7%;
+  top: 15px;
   object-fit: contain;
-  z-index: 6;
+}
+
+#logo-nav {
+  width: 25%;
+  transform: translateY(70%);
+  margin-left: 25%;
 }
 
 .navigationBarTitle {
@@ -72,14 +77,14 @@ body {
   font-size: 23px;
   position: relative;
   text-align: center;
-  top: 7px;
+  bottom: 9px;
 }
 
 /*First screen*/
 .accountForm {
-  transform: translateY(20%);
+  transform: translateY(5%);
   width: 80%;
-  height: 40%;
+  height: 60%;
   margin-left: 15%;
   display: flex;
   justify-content: space-between;
@@ -87,7 +92,7 @@ body {
 }
 
 .accountForm label{
-  padding-top: 80px;
+  padding-top: 20%;
   color: #C9C8C8;
   font-size: 15px;
 }
@@ -106,7 +111,7 @@ body {
 
 .settingsSection {
   width: 90%;
-  margin-top: 15%;
+  margin-top: 10%;
   margin-left: 20px;
   margin-right: 20px;
   /* We need to add to `.box-shadows` to match the
