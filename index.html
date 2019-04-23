@@ -75,7 +75,8 @@
     <img class="right" src="img/LowQualText3.png" width="40%" height="40%">
 
     <div class="center" style="position:relative;padding-top:56.25%;">
-      <iframe src="https://www.youtube.com/embed/K59KuphG898"" frameborder=" 0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+      <iframe src="https://www.youtube.com/embed/K59KuphG898"" frameborder=" 0" allowfullscreen
+        style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
     </div>
 
   </div>
@@ -89,12 +90,13 @@
   </div>
 
   <div class="mcenter" style="position:relative;padding-top:56.25%;">
-    <iframe src="https://www.youtube.com/embed/K59KuphG898"" frameborder=" 0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+    <iframe src="https://www.youtube.com/embed/K59KuphG898"" frameborder=" 0" allowfullscreen
+      style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
   </div>
 
 
   <script>
-    window.onscroll = function() {
+    window.onscroll = function () {
       myFunction()
     };
 
@@ -117,12 +119,23 @@
 
   <script>
     var $hamburger = $(".hamburger");
-    $hamburger.on("click", function(e) {
+    $hamburger.on("click", function (e) {
       $hamburger.toggleClass("is-active");
       $('.responsive-menu').slideToggle('expand')
 
     });
   </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138917488-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-138917488-1');
+  </script>
+
 
 
 
