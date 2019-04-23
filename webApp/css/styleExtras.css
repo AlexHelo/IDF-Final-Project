@@ -40,6 +40,11 @@ body {
   color: 	#696969;
 }
 
+a.bar, a.bar:link, a.bar:visited, a.bar:hover, a.bar:focus, a.bar:active{
+	text-decoration: none;
+  color: 	#696969;
+}
+
 .closebtn {
   width: 7%;
   padding-left: 25px;
@@ -82,7 +87,6 @@ body {
 
 /*First screen*/
 .accountForm {
-  transform: translateY(5%);
   width: 80%;
   height: 60%;
   margin-left: 15%;
@@ -103,7 +107,7 @@ body {
 
 .doneSubmit {
   position: absolute;
-  margin-top: 40vh;
+  margin-top: 21vh;
   margin-left: 24vw;
   font-family: sofia-pro, sans-serif;
   font-weight: 300;
@@ -246,27 +250,25 @@ input:checked + .slider:before {
 }
 
 .editProfileButton {
-  width: 10%;
-  height: 5%;
+  width: 6%;
   position: absolute;
-  right: 5%;
-  top: 15%;
+  right: 10%;
+  top: 17%;
   z-index: 1000;
 }
 
 .doneEditing {
   position: absolute;
-  bottom: 30%;
-  font-family: sofia-pro, sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 20px;
-  color: white;
-  border-radius: 120px;
-  border-color: transparent;
-  width: 50%;
-  left: 25%;
-  right: 25%;
-  height: 60px;
+  margin-top: 10vh;
+  margin-left: 24vw;
+    font-family: sofia-pro, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 15px;
+    color: white;
+    border-radius: 120px;
+    border-color: transparent;
+    width: 203px;
+    height: 60px;
   background-color: #5BA8C6;
 }

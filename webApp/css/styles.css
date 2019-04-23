@@ -64,8 +64,8 @@
   }
 
   .introduction {
-    margin-top: 25%;
-    margin-left: 43%;
+    margin-top: 15%;
+    margin-left: 41%;
     width: 350px;
     text-align: center;
   }
@@ -127,7 +127,7 @@
 
   .submitForm {
     margin-left: 30%;
-    margin-top: 30%;
+    margin-top: 20%;
   }
 
   .login-button {
@@ -140,7 +140,7 @@
 
   .loginbutton {
     margin-left: 56%;
-    margin-top: 90px;
+    margin-top: 10%;
   }
 
   .AccountScreen {

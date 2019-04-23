@@ -78,10 +78,11 @@ body {
 	padding-top: 50px;
 	padding-bottom: 60px;
   transition: 0.3s;
+	color: 	#696969;
 }
 
-.menu-items a:visited {
-  text-decoration: none;
+a.bar, a.bar:link, a.bar:visited, a.bar:hover, a.bar:focus, a.bar:active{
+	text-decoration: none;
   color: 	#696969;
 }
 

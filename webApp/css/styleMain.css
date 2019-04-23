@@ -35,6 +35,11 @@ body {
   transition: 0.3s;
 }
 
+a.bar, a.bar:link, a.bar:visited, a.bar:hover, a.bar:focus, a.bar:active{
+	text-decoration: none;
+  color: 	#696969;
+}
+
 .menu-items a:visited {
   text-decoration: none;
   color: 	#696969;
@@ -73,8 +78,8 @@ body {
 
 .title {
   position: absolute;
-  margin-top: 30%;
-  margin-left: 25%;
+  margin-top: 10%;
+  margin-left: 24%;
   font-weight: 300;
   color: #525252;
 }
@@ -83,7 +88,7 @@ body {
   position: absolute;
   width: 90vw;
   height: 350px;
-  margin-top: 40%;
+  margin-top: 20%;
   margin-left: 5%;
   border-radius: 20px;
   -moz-box-shadow: 0 0 50px 3px #f1ecec;
@@ -164,11 +169,13 @@ input:focus {
 #placeRoom {
   margin-top: 15%;
   position: absolute;
+  padding-left: 1%;
 }
 
 #surfaceInput {
   position: absolute;
   margin-top: 14%;
+  padding-left: 1%;
 }
 
 .doneSubmit {
@@ -188,7 +195,8 @@ input:focus {
 }
 
 #doneSettings{
-  margin-top: 140%;
+  margin-top: 120%;
+  margin-right: 20%;
 }
 
 
@@ -240,7 +248,7 @@ span {
   flex-wrap: wrap;
   justify-content: space-around;
   position: absolute;
-  margin-top: 37%;
+  margin-top: 20%;
   margin-left: 10%;
   transform: translateX(-4.5%);
 }
@@ -313,9 +321,10 @@ span {
 }
 
 #doneTech {
-  position: absolute;
-  transform: translateY(800px);
-  margin-bottom: 30px;
+  position: relative;
+  margin-bottom: 5vh;
+  margin-top: 168vh;
+  transform: translateX(-2%);
 }
 
 .selectTech {
@@ -330,12 +339,15 @@ span {
 }
 
 #instruR {
-  transform: translate(-16%, -50%);
+  margin-top: 8vh;
+  transform: translateX(-16%);
 }
 
 .progressCircle {
-  transform: translate(35%, 90%);
-  width: 60%;
+  position: absolute;
+  margin-top: 16vh;
+  margin-left: 20vw;
+  width: 63%;
 }
 
 .circle {
@@ -343,7 +355,7 @@ span {
   fill: none;
   stroke-width: 2.3;
   stroke-linecap: round;
-  animation: progress 4s ease-out forwards;
+  animation: progress 20s ease-out forwards;
 }
 
 @keyframes progress {
@@ -353,7 +365,8 @@ span {
 }
 
 #donePattern {
-  transform: translate(-38%, -710%);
+  margin-top: 10vh;
+  transform: translateX(-38%);
 }
 
 .greyButton {
@@ -362,7 +375,8 @@ span {
   color: #90949A;
   font-weight: 200;
   text-align: center;
-  transform: translate(37%, 810%);
+  margin-top: 21vh;
+  margin-right: 2vw;
 }
 
 .savingAnimationScreen {
