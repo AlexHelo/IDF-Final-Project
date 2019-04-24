@@ -76,11 +76,11 @@
       <label for="psw"><b>PASSWORD</b></label>
       <input type="password" placeholder="Password" id="create-password" name="psw" required id="inputT">
       <span id="errorSignUp">
-        <h3>It seems that this username is taken, maybe try again?</h3>
+        <h3>It seems that this mail is registered already.  Mind trying again?</h3>
       </span>
     </div>
     <div class="submitForm">
-      <button type="button" name="CreateAccount" class="signUp" id="create">Create Account</button>
+      <button type="button" name="CreateAccount" class="signUp" onclick="verifyAvailability()">Create Account</button>
     </div>
     <div class="loginbutton">
       <span type="button" name="logInbutton" class="login-button" id="lo">Log in</span>
@@ -126,7 +126,7 @@
       <h3>Something seems wrong with your login details, mind trying again?</h3>
     </span>
     <div class="formLogin">
-    <button type="button" name="Login" class="signUp" id="logInval">Log in</button>
+      <button type="button" name="Login" class="signUp" id="logInval">Log in</button>
     </div>
     <div class="signupOption">
       <span type="button" name="SignUp" class="login-button" id="sign">Sign Up</span>
@@ -138,9 +138,9 @@
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src="js/index.js"></script>
   <script type="text/javascript">
-  function inputFocus(){
-    $('input').css("border-color","#707070");
-  };
+    function inputFocus() {
+      $('input').css("border-color", "#707070");
+    };
 
     window.localStorage.setItem('logged-in-user', null);
     // Sign Up gets you to GetStarted screen
@@ -180,26 +180,54 @@
       store.set('tot-usr', 0);
     }
 
-    //Creating account section
-    $('#create').on('click', function() {
-          
-            //steigen tot-usr
-            store.set('tot-usr', (store.get('tot-usr') + 1));
+    function createUser() {
+      // 1) Increment the number of users
+      store.set('tot-usr', (store.get('tot-usr') + 1));
 
-            // Create new user
-            store.set('user-' + store.get('tot-usr'), {
-              name: $('#create-name').val(),
-              email: $('#create-email').val(),
-              password: $('#create-password').val(),
-            });
+      // 2) Create the new user at the end of the user array.
+      store.set('user-' + (store.get('tot-usr')), {
+        name: $('#create-name').val(),
+        email: $('#create-email').val(),
+        password: $('#create-password').val(),
+      });
 
-            //change screen to all set
-            $('.AccountScreen').hide();
-            $('.Login-screen').hide();
-            $('.AllSet').show();
-            $('.GetStarted').hide();
-            // change screen to all set
-    });
+      // 3) Change the screen to all set.
+      $('.AccountScreen').hide();
+      $('.Login-screen').hide();
+      $('.GetStarted').hide();
+      $('.AllSet').show();
+    }
+
+    function verifyAvailability() {
+
+      // check if tot-users exists
+      if (store.get('tot-usr') == null) {
+        store.set('tot-usr', 0);
+        console.log("Total users initialized");
+      }
+
+      if ((store.get('tot-usr') > 0)) {
+        var isRepeated = false;
+        for (var i = 1; i <= store.get('tot-usr'); i++) {
+          // verify that an existing email is not being used for a new account.
+          var pastUser = store.get('user-' + i);
+          if (pastUser.email == $('#create-email').val()) {
+            isRepeated = true
+          }
+        }
+
+        if (isRepeated == true) {
+          // If it is tied to another account, show error text.
+          $('#errorSignUp').fadeIn();
+          $('#errorSignUp').fadeOut(5000);
+        } else {
+          createUser();
+        }
+      } else {
+        // If no users have been added, we can go ahead and directly add the new user.
+        createUser();
+      }
+    }
 
 
     // User registration und returning to login screen
@@ -214,9 +242,9 @@
     $('#logInval').on('click', function() {
       //loop through users
       for (var i = 1; i <= store.get('tot-usr'); i++) {
-        var u = store.get('user-'+i);
-        if (u.email == $('#email').val()
-        && u.password == $('#psw').val()){
+        var u = store.get('user-' + i);
+        if (u.email == $('#email').val() &&
+          u.password == $('#psw').val()) {
           //match
           store.set('logged-in-user', u.email);
           store.set('logged-in-name', u.name);
@@ -229,11 +257,10 @@
           $('.AllSet').hide();
         }
       }
-      $("input").css("border-color","red");
+      $("input").css("border-color", "red");
       $('#errorLogIn').fadeIn();
       $('#errorLogIn').fadeOut(5000);
     });
-
   </script>
 </body>
 
