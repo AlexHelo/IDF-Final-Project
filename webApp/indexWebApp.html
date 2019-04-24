@@ -75,6 +75,9 @@
       <input type="text" placeholder="Email" id="create-email" name="email" required id="inputT">
       <label for="psw"><b>PASSWORD</b></label>
       <input type="password" placeholder="Password" id="create-password" name="psw" required id="inputT">
+      <span id="errorSignUp">
+        <h3>It seems that this username is taken, maybe try again?</h3>
+      </span>
     </div>
     <div class="submitForm">
       <button type="button" name="CreateAccount" class="signUp" id="create">Create Account</button>
@@ -179,29 +182,23 @@
 
     //Creating account section
     $('#create').on('click', function() {
+          
+            //steigen tot-usr
+            store.set('tot-usr', (store.get('tot-usr') + 1));
 
+            // Create new user
+            store.set('user-' + store.get('tot-usr'), {
+              name: $('#create-name').val(),
+              email: $('#create-email').val(),
+              password: $('#create-password').val(),
+            });
 
-      //TODO validate no same user
-
-
-
-
-      //steigen tot-usr
-      store.set('tot-usr', (store.get('tot-usr') + 1));
-
-      // Create new user
-      store.set('user-' + store.get('tot-usr'), {
-        name: $('#create-name').val(),
-        email: $('#create-email').val(),
-        password: $('#create-password').val(),
-      });
-
-      //change screen to all set
-      $('.AccountScreen').hide();
-      $('.Login-screen').hide();
-      $('.AllSet').show();
-      $('.GetStarted').hide();
-      // change screen to all set
+            //change screen to all set
+            $('.AccountScreen').hide();
+            $('.Login-screen').hide();
+            $('.AllSet').show();
+            $('.GetStarted').hide();
+            // change screen to all set
     });
 
 

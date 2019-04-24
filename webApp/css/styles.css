@@ -87,6 +87,18 @@
     margin-left: 20%;
   }
 
+  #errorSignUp{
+    display: none;
+    color: red;
+    width: 65vw;
+    text-align: center;
+    font-size: 40px;
+    line-height: 45px;
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 2%;
+  }
+
   label {
     font-size: 35px;
     font-family: sofia-pro, sans-serif;
