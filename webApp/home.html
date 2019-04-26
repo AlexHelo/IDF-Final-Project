@@ -8,6 +8,8 @@
   <script src="../webApp/js/store.everything.min.js">
   </script>
   <script src="../webApp/js/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="../webApp/js/jquery.mobile.custom.min.js"></script>
   <link rel="stylesheet" href="../webApp/css/homeStyles.css">
   <title>home</title>
 </head>
@@ -78,6 +80,7 @@
             </span>
             <span id="roomEditable" contenteditable="true">Room</span>
             <span id="techEditable">Technology selected</span>
+            <span id="patternEditable"></span>
           </div>
           <!--Make editable: document.getElementById("myP").contentEditable = "true";-->
         </div>
@@ -177,6 +180,27 @@
     <button type="button" name="Done" class="doneSubmit" id="doneTech">Done</button>
   </section>
   <!--end of screen to edit technology-->
+  <!-- Start editing pattern screen -->
+  <section class="savingGestureScreen">
+    <div class="instructionsGesture">
+      <div class="title" id="titleTap">
+        <h1><span>Let’s record your pattern.</span></h1>
+      </div>
+      <div class="instructions" id="insTap">
+        <p>Please tap for a knock and hold to</p>
+        <p>register a silence.</p>
+      </div>
+    </div>
+    <div id="tapArea">
+
+    </div>
+    <div id="gestureArea">
+
+    </div>
+      <button type="button" name="Done" class="doneSubmit" id="doneRecording">Done</button>
+    <div type="button" name="Record" class="greyButton" id="recordAgain"> Record Again </div>
+  </section>
+  <!-- End editing pattern screen -->
   <script type="text/javascript">
     function openNav() {
       document.getElementById("mySidenav").style.width = "80vw";
@@ -233,14 +257,29 @@
 
     var current_knocki = "";
 
+    var dot = "<div class='dot'></div>";
+    var hyphen = "<div class='hyphen'></div>";
+
+    function fillKnockiPattern(pattern) {
+      // First we need to divide `k.pattern` into all of the characters so we can read them individually
+      var charactersInPattern = pattern.split("");
+      for (var i = 0; i < 5; i++) {
+        var pattern = ""
+        if(charactersInPattern[i] == "d") {
+          $('#patternEditable').append(dot);
+        } else {
+          $('#patternEditable').append(hyphen);
+        }
+      }
+    }
+
     // Add dynamic event listener to knocki
     $('body').on('click', '.holder', function() {
       var k = store.get($(this).data('id'));
-      console.log(k);
-
       $('#locEditable').html(k.location);
       $('#roomEditable').html(k.room);
       $('#techEditable').html(k.tech);
+      fillKnockiPattern(k.pattern);
 
       $('.myKnockis').hide();
       $('.editKnocki').show();
@@ -264,6 +303,17 @@
       $('.selectTech').show();
     });
 
+    //Hide edit screen and show pattern screen
+    $('#patternEditable').on('click', function() {
+      $('.knockiVisible').hide();
+      // Before proceeding to the selection of technology. Update the fields in the `.current_knocki`.
+      store.update(current_knocki, function(current_knocki) {
+        current_knocki.location = $('#locEditable').html();
+        current_knocki.room = $('#roomEditable').html();
+      });
+      $('.savingGestureScreen').show();
+    });
+
     $('.containerKnocki').on('click', function() {
       $('.editKnocki').hide();
       // Before proceeding to the selection of technology. Update the fields in the `.current_knocki`.
@@ -273,6 +323,7 @@
       });
       displayKnockis();
       $('.myKnockis').show();
+      $('#patternEditable').html('');
     });
 
     // give feedback to user when selected and save preference
@@ -298,6 +349,70 @@
       $('.selectTech').hide();
     });
 
+    // Records taps
+    // Enter and save gesture
+    var dot = "<div class='dot'></div>";
+    var hyphen = "<div class='hyphen'></div>";
+
+    var tot = 1;
+    var pattern = "";
+
+    if (store.get('tot-codes') == null) {
+      store.set('tot-codes', 0);
+    }
+
+    // Call this to check if the patter has been finally recorded.
+    function patternRecorded() {
+      if (tot == 6) {
+        $('#gestureArea').css('background-color', '#a0ed3624');
+        $('#doneRecording').css('opacity', 1);
+      }
+    }
+
+    $('#tapArea').on("tap", function(e) {
+      if (tot < 6) {
+        e.preventDefault();
+        $('#gestureArea').append(dot);
+        tot++;
+        pattern += "d";
+      }
+      patternRecorded();
+    });
+
+    $("#tapArea").on("taphold", function(e) {
+      if (tot < 6) {
+        e.preventDefault();
+        $('#gestureArea').append(hyphen);
+        pattern += "h";
+        tot++;
+      }
+      patternRecorded();
+    });
+
+    $('#recordAgain').on('click', function() {
+      $('#gestureArea').css('background-color', '#f2f4f5a6');
+      $('#doneRecording').css('opacity', 0);
+      $('#gestureArea').empty();
+      tot=1;
+      patternRecorded();
+    });
+
+    // Updates pattern in current knocki
+
+    $('#doneRecording').on('click', function() {
+      console.log(pattern);
+      console.log(current_knocki);
+      store.update(current_knocki, function(current_knocki) {
+        current_knocki.pattern = pattern;
+      });
+      $('.savingGestureScreen').hide();
+      $('.knockiVisible').show();
+      $('#gestureArea').empty();
+      tot = 1;
+      $('#patternEditable').html('');
+      fillKnockiPattern(pattern);
+    });
+
     // Deletes the Knocki
     $('#deleteKnocki').on('click', function() {
       if (confirm("Are you sure you want to delete this Knocki?")) {
@@ -311,7 +426,6 @@
 
       }
     });
-
 
     displayKnockis();
   </script>

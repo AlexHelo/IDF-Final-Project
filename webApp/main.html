@@ -8,6 +8,8 @@
   <script src="../webApp/js/jquery-3.3.1.min.js"></script>
   <script src="../webApp/js/store.everything.min.js">
   </script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="../webApp/js/jquery.mobile.custom.min.js"></script>
   <link rel="stylesheet" href="../webApp/css/styleMain.css">
   <title>main</title>
 </head>
@@ -66,8 +68,9 @@
     </div>
     <button type="button" name="Done" class="doneSubmit" id="doneSettings">Done</button>
   </section>
+
   <!--First settings parent view coded-->
-  <section class="ConectScreen">
+  <section class="ConnectScreen">
     <div class="title" id="title2">
       <h1>Connect to your <span>Knocki.</span></h1>
     </div>
@@ -82,6 +85,7 @@
       <button type="button" name="Done" class="doneSubmit" id="nextConnect">Next</button>
     </div>
   </section>
+
   <!--Connect screen ends and starts selection of technology-->
   <section class="selectTech" id="selectTech">
     <div class="instructions" id="instructionsTech">
@@ -172,13 +176,35 @@
     </div>
     <button type="button" name="Done" class="doneSubmit" id="doneTech">Done</button>
   </section>
+
+  <!-- Tap gestures record-->
+  <section class="savingGestureScreen">
+    <div class="instructionsGesture">
+      <div class="title" id="titleTap">
+        <h1><span>Let’s record your pattern.</span></h1>
+      </div>
+      <div class="instructions" id="insTap">
+        <p>Please tap for a knock and hold to</p>
+        <p>register a silence.</p>
+      </div>
+    </div>
+    <div id="tapArea">
+
+    </div>
+    <div id="gestureArea">
+
+    </div>
+      <button type="button" name="Done" class="doneSubmit" id="doneRecording">Done</button>
+    <div type="button" name="Record" class="greyButton" id="recordAgain"> Record Again </div>
+  </section>
+
   <section class="savingAnimationScreen">
     <div class="title" id="titleR">
-      <h1><span>Record your pattern.</span></h1>
+      <h1><span>Saving Knocki.</span></h1>
     </div>
     <div class="instructions" id="instruR">
-      <p>Please knock on the surface where</p>
-      <p>your knocki is.</p>
+      <p>All your details are being saved</p>
+      <p>please wait.</p>
     </div>
     <div class="progressCircle">
       <div class="flex-wrapper">
@@ -190,18 +216,22 @@
           </svg>
         </div>
       </div>
-      <a href="../webApp/home.html">
-        <button type="button" name="Done" class="doneSubmit" id="donePattern">Done</button>
-      </a>
-      <div type="button" name="Record" class="greyButton" id="recordAgain"> Record Again </div>
   </section>
 
 
   <!--Script sections-->
   <script type="text/javascript">
+
+    $('.parentView').hide();
+    $('#nextConnect').on('click', function() {
+      $('.parentView').show();
+      $('.ConnectScreen').hide();
+    });
+
     var locUser = 'Home'; // global variable
     var selTech = 'Default'; // global variable
 
+    // Menu jquery
     function openNav() {
       document.getElementById("mySidenav").style.width = "80vw";
     }
@@ -213,6 +243,7 @@
     function returnToNormal() {
       $("input").css("box-shadow", "0 4px 2px -2px #B8B7B5");
     }
+    // Menu jquery
 
     $('#doneSettings').on('click', function() {
       // Before creating the knockis we must make sure that the fields aren't empty.
@@ -220,7 +251,7 @@
       var roomNotEmpty = $('#placeRoom').val().length != 0
       var surfaceNotEmpty = $('#surfaceInput').val().length != 0
       if (roomNotEmpty && surfaceNotEmpty) {
-        $('.selectTech').show();
+        $('.savingGestureScreen').show();
         $('.parentView').hide();
       } else {
         $("input").css("box-shadow", "0 4px 2px -2px #DC143C");
@@ -229,6 +260,64 @@
       }
     });
 
+    // Enter and save gesture
+    var dot = "<div class='dot'></div>";
+    var hyphen = "<div class='hyphen'></div>";
+
+    var tot = 1;
+    var pattern = "";
+
+    if (store.get('tot-codes') == null) {
+      store.set('tot-codes', 0);
+    }
+
+    // Call this to check if the patter has been finally recorded.
+    function patternRecorded() {
+      if (tot == 6) {
+        $('#gestureArea').css('background-color', '#a0ed3624');
+        $('#doneRecording').css('opacity', 1);
+      }
+    }
+
+    $('#tapArea').on("tap", function(e) {
+      if (tot < 6) {
+        e.preventDefault();
+        $('#gestureArea').append(dot);
+        tot++;
+        pattern += "d";
+      }
+      patternRecorded();
+    });
+
+    $("#tapArea").on("taphold", function(e) {
+      if (tot < 6) {
+        e.preventDefault();
+        $('#gestureArea').append(hyphen);
+        pattern += "h";
+        tot++;
+      }
+      patternRecorded();
+    });
+
+    $('#recordAgain').on('click', function() {
+      $('#gestureArea').css('background-color', '#f2f4f5a6');
+      $('#doneRecording').css('opacity', 0);
+      $('#gestureArea').empty();
+      tot=1;
+      patternRecorded();
+    });
+
+    $('#doneRecording').on('click', function() {
+      store.set('tot-codes', store.get('tot-codes')+1);
+      var totp = store.get('tot-codes');
+      store.set('pattern-'+totp, pattern);
+      $('.savingGestureScreen').hide();
+      $('.selectTech').show();
+    });
+
+
+
+    // Select tech screens
     $('.techButton').on('click', function() {
       // Before updating the UI, toggle every `.key-n` to disabled.
       $('.techButton').css('background-color', 'white');
@@ -268,21 +357,21 @@
         room: $('#placeRoom').val(),
         surface: $('#surfaceInput').val(),
         tech: selTech,
+        pattern: pattern,
         enabled: true
       });
       $('.selectTech').hide();
       $('.savingAnimationScreen').show();
+      $('.savingAnimationScreen').delay(4200).fadeOut();
+      window.setTimeout(function() {
+        window.location.href = '../webApp/home.html';
+      }, 5200);
     });
 
-    $('.greyButton').on('click', function() {
-      var el     = $('#animationCircle'),
-     newone = el.clone(true);
-    el.before(newone);
-      $("." + el.attr("class") + ":last").remove();
-    });
+
 
     // Display knockis in home
   </script>
 </body>
 
-</html>
+</html
