@@ -106,14 +106,14 @@ a.bar, a.bar:link, a.bar:visited, a.bar:hover, a.bar:focus, a.bar:active{
 .hamMenu {
   position: relative;
   padding-left: 6%;
-  width: 5%;
-  top: 15px;
+  width: 7%;
+  top: 22px;
   object-fit: contain;
 }
 
 #logo-nav {
   width: 25%;
-  transform: translateY(70%);
+  transform: translateY(82%);
   margin-left: 25%;
 }
 /*Starts my knockis/home styles is in home.html*/
