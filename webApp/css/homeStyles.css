@@ -219,14 +219,14 @@ a.bar, a.bar:link, a.bar:visited, a.bar:hover, a.bar:focus, a.bar:active{
 }
 
 .infoKnocki {
-  margin-top: 16%;
+  margin-top: 1%;
   margin-left: 8%;
 }
 
 .Location img {
-  width: 7%;
-  margin-left: 78%;
-  margin-top: 3%;
+  width: 8%;
+	margin-left: 85%;
+  margin-top: 2%;
   position: absolute;
 }
 
@@ -238,14 +238,14 @@ a.bar, a.bar:link, a.bar:visited, a.bar:hover, a.bar:focus, a.bar:active{
 }
 
 .detailsContainer {
-	transform: translateY(27%);
+	transform: translateY(1%);
 	display: flex;
 	flex-direction: column;
 }
 
 .doneSubmit {
   position: absolute;
-  margin-top: 10vh;
+  margin-top: 1vh;
   margin-left: 7vw;
   font-family: sofia-pro, sans-serif;
   font-weight: 300;
@@ -277,7 +277,7 @@ a.bar, a.bar:link, a.bar:visited, a.bar:hover, a.bar:focus, a.bar:active{
   flex-wrap: wrap;
   justify-content: space-around;
   position: absolute;
-  margin-top: 10%;
+  margin-top: 20%;
   margin-left: 9.5%;
   transform: translateX(-4.5%);
 }
