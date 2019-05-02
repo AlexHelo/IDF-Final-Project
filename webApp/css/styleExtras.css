@@ -26,18 +26,14 @@ body {
 }
 
 .menu-items a {
-	text-decoration: none;
+  text-decoration: none;
   font-size: 22px;
   font-weight: 800;
   text-align: center;
-	padding-top: 10px;
+	padding-top: 50px;
 	padding-bottom: 60px;
   transition: 0.3s;
-}
-
-.menu-items a:visited {
-  text-decoration: none;
-  color: 	#696969;
+	color: 	#696969;
 }
 
 a.bar, a.bar:link, a.bar:visited, a.bar:hover, a.bar:focus, a.bar:active{

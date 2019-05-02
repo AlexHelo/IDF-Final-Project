@@ -190,7 +190,7 @@ a.bar, a.bar:link, a.bar:visited, a.bar:hover, a.bar:focus, a.bar:active{
 
 .containerKnocki {
   margin-left: 3%;
-	margin-top: 10%;
+	margin-top: 5%;
   width: 350px;
   height: 202px;
   background-image: url(../images/selectedKnocki.png);
@@ -226,7 +226,7 @@ a.bar, a.bar:link, a.bar:visited, a.bar:hover, a.bar:focus, a.bar:active{
 .Location img {
   width: 8%;
 	margin-left: 85%;
-  margin-top: 2%;
+  margin-top: 4%;
   position: absolute;
 }
 
@@ -238,7 +238,7 @@ a.bar, a.bar:link, a.bar:visited, a.bar:hover, a.bar:focus, a.bar:active{
 }
 
 .detailsContainer {
-	transform: translateY(1%);
+	transform: translateY(14%);
 	display: flex;
 	flex-direction: column;
 }
@@ -360,13 +360,12 @@ a.bar, a.bar:link, a.bar:visited, a.bar:hover, a.bar:focus, a.bar:active{
 }
 
 #doneTech {
-  position: absolute;
-	margin-top: 350%;
-  margin-bottom: 30px;
+margin-top: 167vh;
+margin-bottom: 10vh;
 }
 
 #deleteKnocki {
-	transform: translateY(130%);
+	transform: translateY(110%);
 	background-color: 	#CD5C5C;
 }
 
