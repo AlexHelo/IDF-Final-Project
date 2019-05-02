@@ -72,10 +72,10 @@
       </div>
       <div class="infoKnocki">
         <div class="Location">
-          <div class="editables">
-            <img src="../webApp/images/editIcon.png" alt="" id="editable">
-          </div>
           <div class="detailsContainer">
+            <div class="editables">
+              <img src="../webApp/images/editIcon.png" alt="" id="editable">
+            </div>
             <span id="locEditable" contenteditable="true">Location
             </span>
             <span id="roomEditable" contenteditable="true">Room</span>
@@ -229,13 +229,18 @@
               <div class="detailsKnocki">
                 <h1 id="knockiTitle">Knocki</h1>
                 <div class="detailsp">
-                  <p id="knockilocation"> ${s.location} </p>
+                  <p id="knockilocation"> ${s.location}</p>
                   <p id="roomlocation">${s.room}</p>
                 </div>
               </div>
             </div>
             `
           );
+          
+          $("#registered").click(function(){
+              // This is the thing that makes the div clickable, 
+              // I have no idea why this works, don't mess with powers you cannot control.
+          });
         }
       }
 
@@ -272,7 +277,7 @@
         }
       }
     }
-
+    
     // Add dynamic event listener to knocki
     $('body').on('click', '.holder', function() {
       var k = store.get($(this).data('id'));
